@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=4 uid="uid://cf7dm6d2dfo1s"]
+
+[ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_ppnbm"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_it5si"]
+_surfaces = [{
+"aabb": AABB(-1.3659577, -0.40925163, -5.9604645e-07, 2.5721548, 0.81850326, 2.6563582),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAAAAIAAwAFAAEABQACAAEAAwAGAAUABAACAAcABgAEAAcABQAHAAIABgAHAAUA"),
+"name": "Material.005",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("xhOLv4+RlL4AACC1tNeuv26J0T6a4B5AtNeuv26J0b6a4B5AxhOLv4+RlD4AACC14jBaP4+RlL4AACC1qmSaP26J0T7EASpA4jBaP4+RlD4AACC1qmSaP26J0b7EASpA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j6wr2"]
+resource_name = "Sketchfab_Scene_Tombstone_2_001_Material_005_0"
+_surfaces = [{
+"aabb": AABB(-1.3659577, -0.40925163, -5.9604645e-07, 2.5721548, 0.81850326, 2.6563582),
+"attribute_data": PackedByteArray("bVv9PpS4IT8plhY/lLghPymWFj+UuCE/bVv9PpS4IT9tW/0+lLghP+dCGD+UuCE/KZYWP5S4IT9tW/0+lLghP21b/T6UuCE/50IYP5S4IT/nQhg/lLghP21b/T6UuCE/bVv9PpS4IT8plhY/lLghP+dCGD+UuCE/bVv9PpS4IT/nQhg/lLghPymWFj+UuCE/KZYWP5S4IT/nQhg/lLghPw=="),
+"format": 34359742487,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEA"),
+"material": ExtResource("1_ppnbm"),
+"name": "Material.005",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("xhOLv4+RlL4AACC1tNeuv26J0T6a4B5AtNeuv26J0b6a4B5AxhOLv4+RlD4AACC1xhOLv4+RlD4AACC1qmSaP26J0T7EASpAtNeuv26J0T6a4B5A4jBaP4+RlD4AACC14jBaP4+RlD4AACC1qmSaP26J0b7EASpAqmSaP26J0T7EASpA4jBaP4+RlL4AACC14jBaP4+RlL4AACC1tNeuv26J0b6a4B5AqmSaP26J0b7EASpAxhOLv4+RlL4AACC1qmSaP26J0T7EASpAtNeuv26J0b6a4B5AtNeuv26J0T6a4B5AqmSaP26J0b7EASpAAADyjP///78AAPKM////vwAA8oz///+/AADyjP///7/hhcf/////v+GFx/////+/4YXH/////7/hhcf/////v///C4////+///8Lj////7///wuP////v///C4////+/4YU3AP///7/hhTcA////v+GFNwD///+/4YU3AP///7/kd/9/////P+R3/3////8/5Hf/f////z/kd/9/////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_it5si")
+
+[node name="Tombstone_2_001" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="Tombstone_2_001_Material_005_0" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_j6wr2")
+skeleton = NodePath("")

@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://cl86yynqeup8p"]
+
+[ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
+[ext_resource type="PackedScene" uid="uid://dciuw1a5wqjk2" path="res://scenes/character.tscn" id="2_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://5h54gv7mydqh" path="res://assets/3D/Town/Street/plane_004.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://qrrglr5ks0nk" path="res://assets/3D/Town/Street/bench.tscn" id="4_q5onr"]
+[ext_resource type="PackedScene" uid="uid://c1a5l8lyic0w4" path="res://assets/3D/Town/Street/fountain.tscn" id="6_jhx03"]
+[ext_resource type="PackedScene" uid="uid://b7553jx7bg6nt" path="res://assets/3D/Town/Street/fence.tscn" id="7_jhx03"]
+[ext_resource type="PackedScene" uid="uid://du2vcbllftwj2" path="res://assets/3D/Town/Buildings/chapel.tscn" id="7_o8fc1"]
+[ext_resource type="PackedScene" uid="uid://cs65nyfbirxsk" path="res://assets/3D/Town/Buildings/house_blue.tscn" id="8_xo05s"]
+[ext_resource type="PackedScene" uid="uid://dhttoehn7vxnx" path="res://assets/3D/Town/Buildings/house_purple.tscn" id="9_dss4m"]
+[ext_resource type="PackedScene" uid="uid://b6f7r3g5vymyu" path="res://assets/3D/Town/Buildings/house_red.tscn" id="10_7t5mc"]
+[ext_resource type="PackedScene" uid="uid://d2f5oreabq3a1" path="res://assets/3D/Town/Buildings/house_2_story_purple.tscn" id="11_lakw3"]
+[ext_resource type="PackedScene" uid="uid://c41q07ovov0wy" path="res://assets/3D/Town/Street/streetlight.tscn" id="13_o8fc1"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rwgxs"]
+sky_top_color = Color(0.08706657, 0.11346652, 0.1486308, 1)
+sky_horizon_color = Color(0.077055134, 0.07883344, 0.20054585, 1)
+
+[sub_resource type="Sky" id="Sky_4wyf3"]
+sky_material = SubResource("ProceduralSkyMaterial_rwgxs")
+
+[sub_resource type="Environment" id="Environment_k0juu"]
+background_mode = 2
+sky = SubResource("Sky_4wyf3")
+ambient_light_source = 1
+
+[node name="World" type="Node3D"]
+
+[node name="Terrain" parent="." instance=ExtResource("1_rwgxs")]
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_4wyf3")]
+transform = Transform3D(-0.9972696, 0, 0.07384739, 0, 1, 0, -0.07384739, 0, -0.9972696, 44.460754, 2.815435, -32.776882)
+SPEED = 10.0
+
+[node name="LightForEditing" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.40405023, 0.89130735, -0.71328014, 0.6854771, -0.14612466, 16.247639, 18.719063, 11.294937)
+visible = false
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.40193546, 0.82125777, -0.40494895, -0.76273376, -0.055589657, 0.6443191, 0.50664103, 0.5678429, 0.64874446, 7.6293945e-06, 19.799393, 0.031532288)
+light_energy = 0.01
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k0juu")
+
+[node name="MainSquare" type="Node" parent="."]
+
+[node name="Bench2" parent="MainSquare" instance=ExtResource("4_q5onr")]
+transform = Transform3D(-0.916083, 0.40098873, 1.7527775e-08, 0, -4.371139e-08, 1, 0.40098873, 0.916083, 4.0043258e-08, 43.00395, -0.09600592, -18.940542)
+
+[node name="Bench3" parent="MainSquare" instance=ExtResource("4_q5onr")]
+transform = Transform3D(0.035911184, 0.99935496, 4.3683194e-08, 0, -4.371139e-08, 1, 0.99935496, -0.035911184, -1.5697277e-09, 51.248127, -0.09600353, -29.955877)
+
+[node name="Bench4" parent="MainSquare" instance=ExtResource("4_q5onr")]
+transform = Transform3D(-0.24297169, -0.9700335, -4.240151e-08, 0, -4.371139e-08, 1, -0.9700335, 0.24297169, 1.062063e-08, 34.65069, -0.09599733, -24.52182)
+
+[node name="Plane_004" parent="MainSquare" instance=ExtResource("3_4wyf3")]
+transform = Transform3D(0.99208623, -0.12555833, -5.488329e-09, 0, -4.371139e-08, 1, -0.12555833, -0.99208623, -4.3365468e-08, 42.692936, 0.005036354, -27.82782)
+
+[node name="Bench" parent="MainSquare" instance=ExtResource("4_q5onr")]
+transform = Transform3D(0.6976279, -0.7164603, -3.131747e-08, 0, -4.371139e-08, 1, -0.7164603, -0.6976279, -3.049428e-08, 36.130466, -0.09600544, -34.297512)
+
+[node name="Fountain" parent="MainSquare" instance=ExtResource("6_jhx03")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 43.160145, -0.11345124, -27.795431)
+
+[node name="Fence" parent="MainSquare" instance=ExtResource("7_jhx03")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 39.861004, -0.113451004, -37.887196)
+
+[node name="Houses" type="Node" parent="."]
+
+[node name="Chapel" parent="Houses" instance=ExtResource("7_o8fc1")]
+transform = Transform3D(-0.8493404, 0.5278455, 2.307286e-08, 0, -4.371139e-08, 1, 0.5278455, 0.8493404, 3.7125847e-08, 45.87007, -0.46727848, 44.157043)
+
+[node name="House_Blue" parent="Houses" instance=ExtResource("8_xo05s")]
+transform = Transform3D(0.93426675, -0.35657495, -1.5586386e-08, 0, -4.371139e-08, 1, -0.35657495, -0.93426675, -4.0838096e-08, 29.616604, -1.48473, -48.39988)
+
+[node name="House_Purple" parent="Houses" instance=ExtResource("9_dss4m")]
+transform = Transform3D(-0.9354564, 0.35344234, 1.5449455e-08, 0, -4.371139e-08, 1, 0.35344234, 0.9354564, 4.0890104e-08, 53.088417, -0.7099755, -10.663121)
+
+[node name="House_Red" parent="Houses" instance=ExtResource("10_7t5mc")]
+transform = Transform3D(0.9977362, 0.06724912, 2.9395526e-09, 0, -4.371139e-08, 1, 0.06724912, -0.9977362, -4.3612435e-08, 9.845768, -1.4847252, -36.921314)
+
+[node name="House_Red2" parent="Houses" instance=ExtResource("10_7t5mc")]
+transform = Transform3D(0.60766697, 0.79419196, 3.471523e-08, 0, -4.371139e-08, 1, 0.79419196, -0.60766697, -2.6561967e-08, 58.088432, -1.4847348, -37.446796)
+
+[node name="House_2Story_Purple" parent="Houses" instance=ExtResource("11_lakw3")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 48.473747, -1.4847262, -42.702305)
+
+[node name="Lamps" type="Node" parent="."]
+
+[node name="Streetlight" parent="Lamps" instance=ExtResource("13_o8fc1")]
+transform = Transform3D(7.54979e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, -7.54979e-08, -3.300118e-15, 35.05447, -0.0138885975, -18.330843)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.213055, 2.1049225, -27.791677)
+light_color = Color(0.5372549, 1, 1, 1)
+light_energy = 3.951
+omni_range = 5.2872024

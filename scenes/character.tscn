@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dciuw1a5wqjk2"]
+
+[ext_resource type="Script" uid="uid://vbgtiseggt60" path="res://scenes/movement.gd" id="1_53v7d"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_rwgxs"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4wyf3"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_53v7d")
+
+[node name="Capsule" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_rwgxs")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_4wyf3")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.94453126, 0.3284216, 0, -0.3284216, 0.94453126, 0, 1.2036314, 2.0623474)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6201344)
+light_color = Color(0.5372549, 1, 1, 1)
+omni_range = 8.126289
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.7640917)
+light_color = Color(0.5372549, 1, 1, 1)
+omni_range = 7.394288
