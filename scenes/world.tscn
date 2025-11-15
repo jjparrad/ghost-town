@@ -101,4 +101,3 @@ omni_range = 5.2872024
 
 [node name="Barrell" parent="." instance=ExtResource("13_jhx03")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 37.07857, 0.05658897, -18.018549)
-interaction_distance = 4.415

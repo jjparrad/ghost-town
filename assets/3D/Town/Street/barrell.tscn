@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=4 uid="uid://dwufn3uted8gv"]
+[gd_scene load_steps=8 format=4 uid="uid://dwufn3uted8gv"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_6kb35"]
 [ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://assets/3D/Town/Street/interactable.gd" id="1_f1cgx"]
@@ -35,6 +35,67 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q5ldt")
 
+[sub_resource type="Animation" id="Animation_f1cgx"]
+resource_name = "interact"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Barrell_Material_005_0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.6, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -4.371139e-08, 1), Vector3(0, 0, 1), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barrell_Material_005_0:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.10228567, 0.29815185, 0.49837062, 0.6964131, 0.9009844, 1.0968506, 1.3014219, 1.4994644, 1.8041451, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.17453292, 0, 0), Vector3(-0.17453292, 0, 0), Vector3(0.17453292, 0, 0), Vector3(-0.17453292, 0, 0), Vector3(0.17453292, 0, 0), Vector3(-0.17453292, 0, 0), Vector3(0.17453292, 0, 0), Vector3(0, 0, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ajoky"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Barrell_Material_005_0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Barrell_Material_005_0:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_i3oxx"]
+_data = {
+&"RESET": SubResource("Animation_ajoky"),
+&"interact": SubResource("Animation_f1cgx")
+}
+
 [node name="Barrell" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_f1cgx")
@@ -42,3 +103,8 @@ script = ExtResource("1_f1cgx")
 [node name="Barrell_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_dqwb7")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_i3oxx")
+}
