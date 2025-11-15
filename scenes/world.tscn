@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cl86yynqeup8p"]
+[gd_scene load_steps=17 format=3 uid="uid://cl86yynqeup8p"]
 
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dciuw1a5wqjk2" path="res://scenes/character.tscn" id="2_4wyf3"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dhttoehn7vxnx" path="res://assets/3D/Town/Buildings/house_purple.tscn" id="9_dss4m"]
 [ext_resource type="PackedScene" uid="uid://b6f7r3g5vymyu" path="res://assets/3D/Town/Buildings/house_red.tscn" id="10_7t5mc"]
 [ext_resource type="PackedScene" uid="uid://d2f5oreabq3a1" path="res://assets/3D/Town/Buildings/house_2_story_purple.tscn" id="11_lakw3"]
+[ext_resource type="PackedScene" uid="uid://dwufn3uted8gv" path="res://assets/3D/Town/Street/barrell.tscn" id="13_jhx03"]
 [ext_resource type="PackedScene" uid="uid://c41q07ovov0wy" path="res://assets/3D/Town/Street/streetlight.tscn" id="13_o8fc1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rwgxs"]
@@ -97,3 +98,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.213055, 2.1049225, -27.791
 light_color = Color(0.5372549, 1, 1, 1)
 light_energy = 3.951
 omni_range = 5.2872024
+
+[node name="Barrell" parent="." instance=ExtResource("13_jhx03")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 37.07857, 0.05658897, -18.018549)

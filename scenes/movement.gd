@@ -7,7 +7,7 @@ func _process(delta):
 	var direction = Vector3.ZERO
 	var forward = -global_transform.basis.z
 	
-	if Input.is_action_pressed("move_forward"):
+	if Input.is_action_pressed("move_forward") or Input.is_action_pressed("move_forward_azerty"):
 		direction += forward
 	if Input.is_action_pressed("move_back"):
 		direction -= forward
@@ -17,7 +17,7 @@ func _process(delta):
 	if Input.is_action_pressed("move_down"):
 		direction -= transform.basis.y
 		
-	if Input.is_action_pressed("move_left"):
+	if Input.is_action_pressed("move_left") or Input.is_action_pressed("move_left_azerty"):
 		rotate_y(ROTATION_SPEED * delta)
 	if Input.is_action_pressed("move_right"):
 		rotate_y(-ROTATION_SPEED * delta)

@@ -17,7 +17,7 @@ skeleton = NodePath("../..")
 shape = SubResource("CapsuleShape3D_4wyf3")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.94453126, 0.3284216, 0, -0.3284216, 0.94453126, 0, 1.2036314, 2.0623474)
+transform = Transform3D(1, 0, 0, 0, 0.94453126, 0.3284216, 0, -0.3284216, 0.94453126, 0, 1.9000568, 3.7207875)
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.6201344)
