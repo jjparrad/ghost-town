@@ -1,7 +1,10 @@
 extends CharacterBody3D
 
 @export var SPEED = 5.0
-@export var ROTATION_SPEED := 2.0 
+@export var ROTATION_SPEED := 2.0
+
+func _ready() -> void:
+	Global.ghost = self
 
 func _process(delta):
 	var direction = Vector3.ZERO

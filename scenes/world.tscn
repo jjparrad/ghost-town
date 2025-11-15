@@ -28,11 +28,11 @@ ambient_light_source = 1
 
 [node name="World" type="Node3D"]
 
-[node name="Terrain" parent="." instance=ExtResource("1_rwgxs")]
-
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_4wyf3")]
+[node name="Ghost" parent="." instance=ExtResource("2_4wyf3")]
 transform = Transform3D(-0.9972696, 0, 0.07384739, 0, 1, 0, -0.07384739, 0, -0.9972696, 44.460754, 2.815435, -32.776882)
 SPEED = 10.0
+
+[node name="Terrain" parent="." instance=ExtResource("1_rwgxs")]
 
 [node name="LightForEditing" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.40405023, 0.89130735, -0.71328014, 0.6854771, -0.14612466, 16.247639, 18.719063, 11.294937)
@@ -101,3 +101,4 @@ omni_range = 5.2872024
 
 [node name="Barrell" parent="." instance=ExtResource("13_jhx03")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 37.07857, 0.05658897, -18.018549)
+interaction_distance = 4.415
