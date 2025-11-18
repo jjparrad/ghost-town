@@ -41,7 +41,7 @@ _subresources={
 "materials": {
 "Material.005": {
 "use_external/enabled": true,
-"use_external/fallback_path": "res://assets/3D/Town/test.tres",
+"use_external/fallback_path": "res://assets/materials/main.tres",
 "use_external/path": "uid://cw8way36gb01p"
 }
 }

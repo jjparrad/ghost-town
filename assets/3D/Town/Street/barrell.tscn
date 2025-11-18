@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://dwufn3uted8gv"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_6kb35"]
-[ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://assets/3D/Town/Street/interactable.gd" id="1_f1cgx"]
+[ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://scripts/interactable.gd" id="1_f1cgx"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_q5ldt"]
 _surfaces = [{
