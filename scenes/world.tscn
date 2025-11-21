@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cl86yynqeup8p"]
+[gd_scene load_steps=50 format=3 uid="uid://cl86yynqeup8p"]
 
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dciuw1a5wqjk2" path="res://scenes/character.tscn" id="2_4wyf3"]
@@ -40,6 +40,8 @@
 [ext_resource type="PackedScene" uid="uid://0yonhp25btgf" path="res://assets/3D/Town/Graveyard/fence_002.tscn" id="37_l8ah6"]
 [ext_resource type="PackedScene" uid="uid://cni7vlxey0mao" path="res://assets/3D/Town/Graveyard/tombstone_1_001.tscn" id="38_e75v4"]
 [ext_resource type="PackedScene" uid="uid://bb3wkscrro3fq" path="res://scenes/agent.tscn" id="39_l8ah6"]
+[ext_resource type="PackedScene" uid="uid://dvehn4f7kx7lc" path="res://scenes/river.tscn" id="40_8u370"]
+[ext_resource type="Script" uid="uid://b5cqellds4e7v" path="res://scenes/river.gd" id="41_rga7q"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8u370"]
 panorama = ExtResource("2_e75v4")
@@ -59,6 +61,44 @@ sample_partition_type = 2
 agent_height = 1.1
 agent_radius = 0.7
 agent_max_slope = 34.41
+
+[sub_resource type="Animation" id="Animation_rga7q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.2217305, 0.029670598)]
+}
+
+[sub_resource type="Animation" id="Animation_8u370"]
+resource_name = "move_river"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 2.99, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.2217305, 0.029670598), Vector3(0, 0, 0.029670598), Vector3(0, 1.2217305, 0.029670598), Vector3(0, 0, 0.029670598), Vector3(0, -1.2217305, 0.029670598)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6oujy"]
+_data = {
+&"RESET": SubResource("Animation_rga7q"),
+&"move_river": SubResource("Animation_8u370")
+}
 
 [node name="World" type="Node3D"]
 
@@ -541,6 +581,16 @@ transform = Transform3D(0.88123745, 0.4726738, 2.0661227e-08, 0, -4.371139e-08, 
 [node name="Terrain" parent="NavigationRegion3D" instance=ExtResource("1_rwgxs")]
 transform = Transform3D(1.5840669, 0, 0, 0, 1.265, 0, 0, 0, 1.5840669, 0, 0, 0)
 skeleton = NodePath("../..")
+
+[node name="River" parent="NavigationRegion3D" instance=ExtResource("40_8u370")]
+transform = Transform3D(0.34186962, -0.010146454, -0.9396926, 0.029666245, 0.9995599, 0, 0.939279, -0.027877152, 0.34202015, 0, -5.776699, 0)
+script = ExtResource("41_rga7q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="NavigationRegion3D/River"]
+libraries = {
+&"": SubResource("AnimationLibrary_6oujy")
+}
+speed_scale = 0.15
 
 [node name="Agent" parent="." instance=ExtResource("39_l8ah6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.678139, -0.010104667, -41.149105)

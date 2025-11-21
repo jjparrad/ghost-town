@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://dvehn4f7kx7lc"]
+
+[ext_resource type="ArrayMesh" uid="uid://c4775bd47gfgf" path="res://assets/3D/Terrain/terrain.obj" id="1_s00bq"]
+
+[sub_resource type="ORMMaterial3D" id="ORMMaterial3D_manwy"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0, 0.40392157, 1, 0.6901961)
+
+[node name="River" type="Node3D"]
+
+[node name="Terrain" type="MeshInstance3D" parent="."]
+transform = Transform3D(-8.742278e-08, -2.1855694e-08, -2, 0, -0.25, 1.7484555e-07, -2, 9.553427e-16, 8.742278e-08, 0, 0, 0)
+material_override = SubResource("ORMMaterial3D_manwy")
+mesh = ExtResource("1_s00bq")
