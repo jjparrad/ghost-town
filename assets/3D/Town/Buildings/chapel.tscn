@@ -42,3 +42,9 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 [node name="Chapel_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_mw4it")
 skeleton = NodePath("")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(-1, 5.6372096e-07, 6.8627195e-08, -8.742278e-08, -6.4482155, -0.78500366, -3.821371e-15, -8.171015, 0.6194913, 0, 5.0878285e-08, -1.1639595)
+vertices = PackedVector3Array(-4.1972995, 0, 9.17378, 4.510971, 0, 9.396432, 4.612593, 0, 1.5118389, 7.8103304, 0, 0.76807404, 7.6341963, 0, -9.462492, -7.399892, 0, -9.719147, -7.41171, 0, 0.6161194, -4.284275, 0, 0.6280508)
+affect_navigation_mesh = true
+carve_navigation_mesh = true
