@@ -42,3 +42,7 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 [node name="House_Purple_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_w127q")
 skeleton = NodePath("")
+
+[node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
+transform = Transform3D(-4.371139e-08, 5.343785, 0, -1, -2.3358426e-07, 0, 0, 0, 1.0000001, 0, 0, 0)
+vertices = PackedVector3Array(-4.4279203, 0, 4.4694905, 4.1183248, 0, 4.22884, 4.25894, 0, -4.0689435, -4.2050295, 0, -4.4021688)
