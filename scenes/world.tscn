@@ -1,7 +1,8 @@
-[gd_scene load_steps=44 format=3 uid="uid://cl86yynqeup8p"]
+[gd_scene load_steps=45 format=3 uid="uid://cl86yynqeup8p"]
 
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dciuw1a5wqjk2" path="res://scenes/character.tscn" id="2_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://dx2u3kl40tn3b" path="res://assets/skybox/AllSkyFree_Sky_ColdNight_Equirect.png" id="2_e75v4"]
 [ext_resource type="PackedScene" uid="uid://5h54gv7mydqh" path="res://assets/3D/Town/Street/plane_004.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://qrrglr5ks0nk" path="res://assets/3D/Town/Street/bench.tscn" id="4_q5onr"]
 [ext_resource type="PackedScene" uid="uid://c1a5l8lyic0w4" path="res://assets/3D/Town/Street/fountain.tscn" id="6_jhx03"]
@@ -40,16 +41,15 @@
 [ext_resource type="PackedScene" uid="uid://cni7vlxey0mao" path="res://assets/3D/Town/Graveyard/tombstone_1_001.tscn" id="38_e75v4"]
 [ext_resource type="PackedScene" uid="uid://bb3wkscrro3fq" path="res://scenes/agent.tscn" id="39_l8ah6"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rwgxs"]
-sky_top_color = Color(0.08706657, 0.11346652, 0.1486308, 1)
-sky_horizon_color = Color(0.077055134, 0.07883344, 0.20054585, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8u370"]
+panorama = ExtResource("2_e75v4")
 
-[sub_resource type="Sky" id="Sky_4wyf3"]
-sky_material = SubResource("ProceduralSkyMaterial_rwgxs")
+[sub_resource type="Sky" id="Sky_rga7q"]
+sky_material = SubResource("PanoramaSkyMaterial_8u370")
 
 [sub_resource type="Environment" id="Environment_k0juu"]
 background_mode = 2
-sky = SubResource("Sky_4wyf3")
+sky = SubResource("Sky_rga7q")
 ambient_light_source = 1
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_ggc52"]
@@ -68,6 +68,7 @@ SPEED = 10.0
 
 [node name="LightForEditing" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.40405023, 0.89130735, -0.71328014, 0.6854771, -0.14612466, 16.247639, 18.719063, 11.294937)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.40193546, 0.82125777, -0.40494892, -0.76273376, -0.055589635, 0.6443191, 0.50664103, 0.5678429, 0.64874446, 7.6293945e-06, 56.872616, 0.031532288)
@@ -542,4 +543,4 @@ transform = Transform3D(1.5840669, 0, 0, 0, 1.265, 0, 0, 0, 1.5840669, 0, 0, 0)
 skeleton = NodePath("../..")
 
 [node name="Agent" parent="." instance=ExtResource("39_l8ah6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.507526, -0.010104667, -27.93899)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.678139, -0.010104667, -41.149105)
