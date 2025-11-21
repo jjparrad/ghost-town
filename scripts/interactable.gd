@@ -45,6 +45,7 @@ func interact() -> void:
 	mesh.set_surface_override_material(0, Global.base_material)
 	var anim_player = $AnimationPlayer
 	anim_player.play("interact")
+	scare()
 	await get_tree().create_timer(interaction_timeout).timeout
 	is_interacting = false
 
