@@ -65,7 +65,7 @@ transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.4040
 visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.40193546, 0.82125777, -0.40494895, -0.76273376, -0.055589657, 0.6443191, 0.50664103, 0.5678429, 0.64874446, 7.6293945e-06, 19.799393, 0.031532288)
+transform = Transform3D(-0.40193546, 0.82125777, -0.40494892, -0.76273376, -0.055589635, 0.6443191, 0.50664103, 0.5678429, 0.64874446, 7.6293945e-06, 56.872616, 0.031532288)
 light_energy = 0.01
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -196,6 +196,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.61107, 2.1049225, -44.2209
 light_color = Color(0.5372549, 1, 1, 1)
 light_energy = 3.951
 omni_range = 5.2872024
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lamps"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.69004, 20.606174, -10.296879)
+light_energy = 3.951
+omni_range = 15.505455
 
 [node name="Streetlight2" parent="Lamps" instance=ExtResource("13_o8fc1")]
 transform = Transform3D(7.54979e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, -7.54979e-08, -3.300118e-15, 22.196198, -0.10092354, -46.649094)
