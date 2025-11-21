@@ -10,8 +10,12 @@ var base_position: Vector3
 @export var interaction_distance: float = 10
 @export var interaction_timeout := 2.5
 
+var near_agents: Array = []
+
 func _ready() -> void:
 	ghost = Global.ghost
+	$Area3D.body_entered.connect(_on_body_entered)
+	$Area3D.body_exited.connect(_on_body_exited)
 	for child in get_children():
 		if child is MeshInstance3D:
 			mesh = child
@@ -43,3 +47,15 @@ func interact() -> void:
 	anim_player.play("interact")
 	await get_tree().create_timer(interaction_timeout).timeout
 	is_interacting = false
+
+func scare() -> void:
+	for agent in near_agents:
+		agent.scare()
+
+func _on_body_entered(body):
+	if body.is_in_group("agents"):
+		near_agents.append(body)
+
+func _on_body_exited(body):
+	if body.is_in_group("agents"):
+		near_agents.erase(body)

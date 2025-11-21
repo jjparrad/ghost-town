@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=4 uid="uid://c6tr6nbqucn46"]
+[gd_scene load_steps=4 format=4 uid="uid://c6tr6nbqucn46"]
 
-[ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://scripts/interactable.gd" id="1_d4uw0"]
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_l7wps"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_7g7h5"]
@@ -37,52 +36,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7g7h5")
 
-[sub_resource type="Animation" id="Animation_8v2bx"]
-resource_name = "interact"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Daisy_Material_005_0:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.23333333, 0.7, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, 3.1415927), Vector3(0, 0, -1.5707964), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_pjyfc"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Daisy_Material_005_0:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a7fpa"]
-_data = {
-&"RESET": SubResource("Animation_pjyfc"),
-&"interact": SubResource("Animation_8v2bx")
-}
-
 [node name="Daisy" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
-script = ExtResource("1_d4uw0")
 
 [node name="Daisy_Material_005_0" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_icku1")
 skeleton = NodePath("")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_a7fpa")
-}
