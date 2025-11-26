@@ -108,6 +108,7 @@ SPEED = 10.0
 
 [node name="LightForEditing" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.40405023, 0.89130735, -0.71328014, 0.6854771, -0.14612466, 16.247639, 18.719063, 11.294937)
+visible = false
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.40193546, 0.82125777, -0.40494892, -0.76273376, -0.055589635, 0.6443191, 0.50664103, 0.5678429, 0.64874446, 7.6293945e-06, 56.872616, 0.031532288)
