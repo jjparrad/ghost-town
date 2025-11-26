@@ -1,11 +1,12 @@
-[gd_scene load_steps=57 format=4 uid="uid://cl86yynqeup8p"]
+[gd_scene load_steps=55 format=4 uid="uid://cl86yynqeup8p"]
 
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://dciuw1a5wqjk2" path="res://scenes/character.tscn" id="2_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://dx2u3kl40tn3b" path="res://assets/skybox/AllSkyFree_Sky_ColdNight_Equirect.png" id="2_e75v4"]
 [ext_resource type="PackedScene" uid="uid://5h54gv7mydqh" path="res://assets/3D/Town/Street/plane_004.tscn" id="3_4wyf3"]
+[ext_resource type="PackedScene" uid="uid://p4nt5ujaulag" path="res://scenes/graveyard.tscn" id="3_8u370"]
 [ext_resource type="PackedScene" uid="uid://qrrglr5ks0nk" path="res://assets/3D/Town/Street/bench.tscn" id="4_q5onr"]
-[ext_resource type="PackedScene" uid="uid://dxw0ilquo4p6b" path="res://scenes/forest.tscn" id="6_8u370"]
+[ext_resource type="PackedScene" path="res://scenes/forest.tscn" id="6_8u370"]
 [ext_resource type="PackedScene" uid="uid://c1a5l8lyic0w4" path="res://assets/3D/Town/Street/fountain.tscn" id="6_jhx03"]
 [ext_resource type="PackedScene" uid="uid://b7553jx7bg6nt" path="res://assets/3D/Town/Street/fence.tscn" id="7_jhx03"]
 [ext_resource type="PackedScene" uid="uid://bnxrel5icbmy0" path="res://assets/3D/Town/Street/market_stall_red.tscn" id="7_lakw3"]
@@ -36,9 +37,6 @@
 [ext_resource type="PackedScene" uid="uid://dxjkmvqra0gao" path="res://assets/3D/Town/Farm/farm_carrot.tscn" id="29_ggc52"]
 [ext_resource type="PackedScene" uid="uid://dj3isxukp8okw" path="res://assets/3D/Town/Farm/hay_pile.tscn" id="31_l8ah6"]
 [ext_resource type="PackedScene" uid="uid://c11lw7s0uc813" path="res://assets/3D/Town/Street/stone_path.tscn" id="35_f17e3"]
-[ext_resource type="PackedScene" uid="uid://cdxmiogatlxwk" path="res://assets/3D/Town/Graveyard/arch.tscn" id="36_ggc52"]
-[ext_resource type="PackedScene" uid="uid://0yonhp25btgf" path="res://assets/3D/Town/Graveyard/fence_002.tscn" id="37_l8ah6"]
-[ext_resource type="PackedScene" uid="uid://cni7vlxey0mao" path="res://assets/3D/Town/Graveyard/tombstone_1_001.tscn" id="38_e75v4"]
 [ext_resource type="PackedScene" uid="uid://bi8lir0ljftp2" path="res://assets/3D/Bridge/Dock_Wide.fbx" id="39_6oujy"]
 [ext_resource type="PackedScene" uid="uid://bb3wkscrro3fq" path="res://scenes/agent.tscn" id="39_l8ah6"]
 [ext_resource type="PackedScene" uid="uid://dvehn4f7kx7lc" path="res://scenes/river.tscn" id="40_8u370"]
@@ -197,16 +195,7 @@ environment = SubResource("Environment_k0juu")
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ggc52")
 
-[node name="Graveyard" type="Node" parent="NavigationRegion3D"]
-
-[node name="Arch" parent="NavigationRegion3D/Graveyard" instance=ExtResource("36_ggc52")]
-transform = Transform3D(0.2277731, 0.97371423, 4.25624e-08, 0, -4.371139e-08, 1, 0.97371423, -0.2277731, -9.9562785e-09, -0.66472304, 5.127728, 54.108852)
-
-[node name="Fence_002" parent="NavigationRegion3D/Graveyard" instance=ExtResource("37_l8ah6")]
-transform = Transform3D(0.63342136, 0.77380705, 3.382418e-08, 0, -4.371139e-08, 1, 0.77380705, -0.63342136, -2.7687728e-08, -1.4822009, 5.3211417, 49.250065)
-
-[node name="Tombstone_1_001" parent="NavigationRegion3D/Graveyard" instance=ExtResource("38_e75v4")]
-transform = Transform3D(-0.042765014, 0.9990852, 4.36714e-08, 0, -4.371139e-08, 1, 0.9990852, 0.042765014, 1.869318e-09, -16.976515, 5.0194154, 44.96825)
+[node name="Graveyard" parent="NavigationRegion3D" instance=ExtResource("3_8u370")]
 
 [node name="Path" type="Node" parent="NavigationRegion3D"]
 
