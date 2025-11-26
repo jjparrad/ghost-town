@@ -10,7 +10,7 @@ var has_target: bool = false
 func _ready() -> void:
 	add_to_group("agents")
 	has_target = true
-	target_pos = Vector3(0.0,0.0,0.0)
+	target_pos = Vector3(24.616,0.0,44.848)
 	
 
 func _physics_process(delta: float) -> void:
