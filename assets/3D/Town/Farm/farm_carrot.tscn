@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://dxjkmvqra0gao"]
+[gd_scene load_steps=8 format=4 uid="uid://dxjkmvqra0gao"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_nj8gb"]
 
@@ -36,9 +36,60 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sjnq8")
 
+[sub_resource type="Animation" id="Animation_8lxeb"]
+resource_name = "interact"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Farm_Carrot_Material_005_0:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.4, 1.8333334, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1.25), Vector3(1, 1, 1.12), Vector3(1, 1, 1.4), Vector3(1, 1, 1.6), Vector3(1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4di1l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Farm_Carrot_Material_005_0:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_usytu"]
+_data = {
+&"RESET": SubResource("Animation_4di1l"),
+&"interact": SubResource("Animation_8lxeb")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8lxeb"]
+radius = 7.739621
+
 [node name="Farm_Carrot" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Farm_Carrot_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_qpctl")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_usytu")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.371139e-08, 1)
+shape = SubResource("SphereShape3D_8lxeb")

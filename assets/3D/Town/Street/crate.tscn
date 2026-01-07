@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://d03jgsqy4p1yb"]
+[gd_scene load_steps=8 format=4 uid="uid://d03jgsqy4p1yb"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_oyny4"]
 
@@ -34,9 +34,84 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gmvba")
 
+[sub_resource type="Animation" id="Animation_o32va"]
+resource_name = "interact"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crate_Material_005_0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.6666666, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, 1), Vector3(0, 0, 1), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crate_Material_005_0:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0.17453292, 0, 0.7853982), Vector3(-0.17453292, 0.13962634, 1.5707964), Vector3(0.17453292, -0.13962634, 2.3561945), Vector3(0, 0, 3.1415927), Vector3(-0.17453292, 0.13962634, 3.7524579), Vector3(-0.17453292, -0.12217305, 4.712389), Vector3(-0.05235988, 0.17453292, 5.497787), Vector3(0, 0, 6.2831855)]
+}
+
+[sub_resource type="Animation" id="Animation_a45b8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Crate_Material_005_0:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Crate_Material_005_0:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_esyjm"]
+_data = {
+&"RESET": SubResource("Animation_a45b8"),
+&"interact": SubResource("Animation_o32va")
+}
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_o32va"]
+radius = 6.977941
+
 [node name="Crate" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Crate_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_6isqw")
 skeleton = NodePath("")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_esyjm")
+}
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.371139e-08, 1)
+shape = SubResource("SphereShape3D_o32va")

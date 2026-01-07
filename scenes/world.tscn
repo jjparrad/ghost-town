@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=4 uid="uid://cl86yynqeup8p"]
+[gd_scene load_steps=56 format=4 uid="uid://cl86yynqeup8p"]
 
 [ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="1_8u370"]
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://cs65nyfbirxsk" path="res://assets/3D/Town/Buildings/house_blue.tscn" id="8_xo05s"]
 [ext_resource type="PackedScene" uid="uid://dhttoehn7vxnx" path="res://assets/3D/Town/Buildings/house_purple.tscn" id="9_dss4m"]
 [ext_resource type="PackedScene" uid="uid://b6f7r3g5vymyu" path="res://assets/3D/Town/Buildings/house_red.tscn" id="10_7t5mc"]
+[ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://scripts/interactable.gd" id="10_rga7q"]
 [ext_resource type="PackedScene" uid="uid://d03jgsqy4p1yb" path="res://assets/3D/Town/Street/crate.tscn" id="11_7iits"]
 [ext_resource type="PackedScene" uid="uid://d2f5oreabq3a1" path="res://assets/3D/Town/Buildings/house_2_story_purple.tscn" id="11_lakw3"]
 [ext_resource type="PackedScene" uid="uid://fhc3ph4bafmx" path="res://assets/3D/Town/Nature/potted_bush.tscn" id="12_xgqkh"]
@@ -184,7 +185,6 @@ shadow_mesh = SubResource("ArrayMesh_y3q12")
 transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.40405023, 0.89130735, -0.71328014, 0.6854771, -0.14612466, 16.247639, 18.719063, 11.294937)
 
 [node name="ghost" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4671154, -10.340242)
 script = ExtResource("1_8u370")
 metadata/_custom_type_script = "uid://ck4yn3hxuobj7"
 
@@ -333,30 +333,38 @@ transform = Transform3D(0.8675052, 0.49742824, 2.174328e-08, 0, -4.371139e-08, 1
 
 [node name="Hay_Bale3" parent="NavigationRegion3D/Farm" instance=ExtResource("27_x2olw")]
 transform = Transform3D(0.97892445, 0.2042227, 8.9268575e-09, 0, -4.371139e-08, 1, 0.2042227, -0.97892445, -4.279015e-08, -54.71835, 1.6675757, -50.11127)
+script = ExtResource("10_rga7q")
 
 [node name="Hay_Bale4" parent="NavigationRegion3D/Farm" instance=ExtResource("27_x2olw")]
 transform = Transform3D(0.7848954, 0.6196283, 2.7084809e-08, 0, -4.371139e-08, 1, 0.6196283, -0.7848954, -3.430887e-08, -52.662697, 0.4396072, -72.18544)
+script = ExtResource("10_rga7q")
 
 [node name="Hay_Cart2" parent="NavigationRegion3D/Farm" instance=ExtResource("28_817gm")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -33.990788, 1.008167, -59.648994)
 
 [node name="Farm_Carrot" parent="NavigationRegion3D/Farm" instance=ExtResource("29_ggc52")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -30.547493, -0.090360746, -73.86421)
+script = ExtResource("10_rga7q")
 
 [node name="Farm_Carrot2" parent="NavigationRegion3D/Farm" instance=ExtResource("29_ggc52")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -30.547493, -0.090360746, -69.20036)
+script = ExtResource("10_rga7q")
 
 [node name="Farm_Carrot3" parent="NavigationRegion3D/Farm" instance=ExtResource("29_ggc52")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -30.547493, -0.090360746, -64.463234)
+script = ExtResource("10_rga7q")
 
 [node name="Farm_Carrot4" parent="NavigationRegion3D/Farm" instance=ExtResource("29_ggc52")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -25.455492, -0.090360746, -73.86421)
+script = ExtResource("10_rga7q")
 
 [node name="Farm_Carrot5" parent="NavigationRegion3D/Farm" instance=ExtResource("29_ggc52")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -25.455492, -0.090360746, -69.20036)
+script = ExtResource("10_rga7q")
 
 [node name="Farm_Carrot6" parent="NavigationRegion3D/Farm" instance=ExtResource("29_ggc52")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -25.455492, -0.090360746, -64.463234)
+script = ExtResource("10_rga7q")
 
 [node name="Barn" parent="NavigationRegion3D/Farm" instance=ExtResource("25_navra")]
 transform = Transform3D(0.3627797, -0.9318749, -4.0733543e-08, 3.5832073e-15, -4.3711385e-08, 1, -0.9318749, -0.3627797, -1.5857605e-08, -67.470726, -0.70009315, -47.6503)
@@ -452,42 +460,54 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 0.9132414, 0, -1, -3.9919048e
 
 [node name="Daisy" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(-0.46678793, -0.8843693, -3.865701e-08, 0, -4.371139e-08, 1, -0.8843693, 0.46678793, 2.0403949e-08, 31.15992, 0.28237778, -60.420387)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy2" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(-0.031759687, -0.9994955, -4.3689337e-08, 0, -4.371139e-08, 1, -0.9994955, 0.031759687, 1.38826e-09, 66.537575, 0.2823802, -60.214073)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy3" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 43.192062, 0.28237778, -40.08831)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy4" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(-0.9135738, -0.40667298, -1.7776241e-08, 0, -4.371139e-08, 1, -0.40667298, 0.9135738, 3.9933578e-08, 41.40799, 0.28237897, -50.982994)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy5" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(-0.6477077, -0.7618889, -3.3303223e-08, 0, -4.371139e-08, 1, -0.7618889, 0.6477077, 2.8312202e-08, -4.366295, 0.28237778, -72.19632)
+script = ExtResource("10_rga7q")
 
 [node name="Shroom" parent="NavigationRegion3D/Plants" instance=ExtResource("24_rup4s")]
 transform = Transform3D(0.9801295, 8.670537e-09, -0.19835876, 0.19835876, -4.284282e-08, 0.9801295, 0, -1, -4.371139e-08, 61.316555, -0.16561845, -4.654574)
+script = ExtResource("10_rga7q")
 
 [node name="Shroom2" parent="NavigationRegion3D/Plants" instance=ExtResource("24_rup4s")]
 transform = Transform3D(1, 0, 0, 0, 0.2833626, 0.9590128, 0, -0.9590128, 0.2833626, 61.500587, -0.09275204, -3.1144533)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy6" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(-0.52397114, 0.851736, 3.7230564e-08, 0, -4.371139e-08, 1, 0.851736, 0.52397114, 2.2903507e-08, -37.0696, 0.28248757, -74.16671)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy7" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(0.002740217, 0.99999624, 4.3711225e-08, 0, -4.371139e-08, 1, 0.99999624, -0.002740217, -1.1977869e-10, -69.11599, 0.9723004, -59.331406)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy8" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -66.245285, -1.2796206, -34.293957)
+script = ExtResource("10_rga7q")
 
 [node name="Daisy9" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -30.249195, -0.18469256, -36.531994)
+script = ExtResource("10_rga7q")
 
 [node name="Boulder_001" parent="NavigationRegion3D/Plants" instance=ExtResource("23_0nbtd")]
 transform = Transform3D(-0.70710677, 0.70710677, 3.090862e-08, 0, -4.3711385e-08, 1, 0.70710677, 0.70710677, 3.0908616e-08, -34.15873, -2.0349696, -34.316814)
 
 [node name="Daisy10" parent="NavigationRegion3D/Plants" instance=ExtResource("22_ts3gi")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -20.969639, 0.28228006, -62.47141)
+script = ExtResource("10_rga7q")
 
 [node name="Boulder_002" parent="NavigationRegion3D/Plants" instance=ExtResource("23_0nbtd")]
 transform = Transform3D(-0.70710677, 0.70710677, 3.090862e-08, 0, -4.371139e-08, 1, 0.70710677, 0.70710677, 3.090862e-08, -9.773668, -1.1117527, -30.11584)
@@ -632,12 +652,15 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 61.0
 
 [node name="Crate" parent="NavigationRegion3D/MainSquare" instance=ExtResource("11_7iits")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 22.53119, -0.033860072, -53.737457)
+script = ExtResource("10_rga7q")
 
 [node name="Crate3" parent="NavigationRegion3D/MainSquare" instance=ExtResource("11_7iits")]
 transform = Transform3D(0.9060938, 0.42307693, 1.849328e-08, 0, -4.371139e-08, 1, 0.42307693, -0.9060938, -3.960662e-08, 25.333138, -0.033860072, -51.499557)
+script = ExtResource("10_rga7q")
 
 [node name="Crate2" parent="NavigationRegion3D/MainSquare" instance=ExtResource("11_7iits")]
 transform = Transform3D(0.79025126, -0.6127829, -2.678559e-08, 0, -4.371139e-08, 1, -0.6127829, -0.79025126, -3.454298e-08, 35.64897, -0.053734392, -39.275093)
+script = ExtResource("10_rga7q")
 
 [node name="Potted_Bush" parent="NavigationRegion3D/MainSquare" instance=ExtResource("12_xgqkh")]
 transform = Transform3D(0.94519997, 0.32649213, 1.4271424e-08, 0, -4.371139e-08, 1, 0.32649213, -0.94519997, -4.1316e-08, 35.86272, 1.0154296e-06, -58.507248)
