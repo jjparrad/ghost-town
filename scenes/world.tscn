@@ -1,7 +1,7 @@
 [gd_scene load_steps=55 format=4 uid="uid://cl86yynqeup8p"]
 
+[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="1_8u370"]
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://dciuw1a5wqjk2" path="res://scenes/character.tscn" id="2_4wyf3"]
 [ext_resource type="Texture2D" uid="uid://dx2u3kl40tn3b" path="res://assets/skybox/AllSkyFree_Sky_ColdNight_Equirect.png" id="2_e75v4"]
 [ext_resource type="PackedScene" uid="uid://5h54gv7mydqh" path="res://assets/3D/Town/Street/plane_004.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://p4nt5ujaulag" path="res://scenes/graveyard.tscn" id="3_8u370"]
@@ -180,13 +180,27 @@ shadow_mesh = SubResource("ArrayMesh_y3q12")
 
 [node name="World" type="Node3D"]
 
-[node name="Ghost" parent="." instance=ExtResource("2_4wyf3")]
-transform = Transform3D(-0.26420987, 0, 0.9644654, 0, 1, 0, -0.9644654, 0, -0.26420987, 58.211674, 2.815435, -52.255722)
-SPEED = 10.0
-
 [node name="LightForEditing" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.40405023, 0.89130735, -0.71328014, 0.6854771, -0.14612466, 16.247639, 18.719063, 11.294937)
-visible = false
+
+[node name="ghost" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.4671154, -10.340242)
+script = ExtResource("1_8u370")
+metadata/_custom_type_script = "uid://ck4yn3hxuobj7"
+
+[node name="XROrigin3D" type="XROrigin3D" parent="ghost"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.605047, 5.881057, -17.325178)
+
+[node name="XRCamera3D" type="XRCamera3D" parent="ghost/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="leftHand" type="XRController3D" parent="ghost/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
+tracker = &"left_hand"
+
+[node name="rightHand" type="XRController3D" parent="ghost/XROrigin3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
+tracker = &"right_hand"
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.40193546, 0.82125777, -0.40494892, -0.76273376, -0.055589635, 0.6443191, 0.50664103, 0.5678429, 0.64874446, 7.6293945e-06, 56.872616, 0.031532288)
