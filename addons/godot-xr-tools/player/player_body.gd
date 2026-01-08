@@ -180,6 +180,8 @@ var _in_physics_movement : bool = false
 # Fade object
 var _fade : XRToolsFade
 
+
+
 # Fade value
 var _fade_value : float = 0.0
 
@@ -211,6 +213,7 @@ func is_xr_class(xr_name:  String) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	XRServer.center_on_hmd(XRServer.RESET_BUT_KEEP_TILT, true)
 	if Engine.is_editor_hint():
 		# In editing, keep player body linked to our origin
 		set_as_top_level(false)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bds6ytrgl804i"]
+
+[ext_resource type="Script" uid="uid://cqqnmt76ajkaq" path="res://scenes/test.gd" id="1_bl13t"]
+[ext_resource type="PackedScene" uid="uid://bi8lir0ljftp2" path="res://assets/3D/Bridge/Dock_Wide.fbx" id="1_errlg"]
+
+[sub_resource type="Environment" id="Environment_iyx0m"]
+
+[node name="Test" type="Node3D"]
+script = ExtResource("1_bl13t")
+
+[node name="XROrigin3D" type="XROrigin3D" parent="."]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
+
+[node name="left" type="XRController3D" parent="XROrigin3D"]
+tracker = &"left_hand"
+
+[node name="right" type="XRController3D" parent="XROrigin3D"]
+tracker = &"right_hand"
+
+[node name="Dock_Wide" parent="." instance=ExtResource("1_errlg")]
+transform = Transform3D(-0.018202774, 0, -0.9998343, 0, 1, 0, 0.9998343, 0, -0.018202774, -1.105853, -4.071926, -25.096947)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23.914413, -32.050514)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_iyx0m")
