@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=4 uid="uid://cl86yynqeup8p"]
+[gd_scene load_steps=63 format=4 uid="uid://cl86yynqeup8p"]
 
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_6oujy"]
@@ -9,7 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_eo1xk"]
 [ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_6oujy"]
 [ext_resource type="PackedScene" uid="uid://qrrglr5ks0nk" path="res://assets/3D/Town/Street/bench.tscn" id="4_q5onr"]
-[ext_resource type="Script" uid="uid://dyvp2xrn3um1y" path="res://scenes/left.gd" id="4_x28ej"]
 [ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="5_4wdv8"]
 [ext_resource type="PackedScene" uid="uid://dxw0ilquo4p6b" path="res://scenes/forest.tscn" id="6_8u370"]
 [ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_18clu"]
@@ -18,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://b7553jx7bg6nt" path="res://assets/3D/Town/Street/fence.tscn" id="7_jhx03"]
 [ext_resource type="PackedScene" uid="uid://bnxrel5icbmy0" path="res://assets/3D/Town/Street/market_stall_red.tscn" id="7_lakw3"]
 [ext_resource type="PackedScene" uid="uid://du2vcbllftwj2" path="res://assets/3D/Town/Buildings/chapel.tscn" id="7_o8fc1"]
-[ext_resource type="Script" uid="uid://djoqejjqe2lfo" path="res://scenes/right.gd" id="8_1jxku"]
 [ext_resource type="PackedScene" uid="uid://b04dsygtpa5g3" path="res://assets/3D/Town/Street/well.tscn" id="8_pm21f"]
 [ext_resource type="PackedScene" uid="uid://cs65nyfbirxsk" path="res://assets/3D/Town/Buildings/house_blue.tscn" id="8_xo05s"]
 [ext_resource type="PackedScene" uid="uid://dhttoehn7vxnx" path="res://assets/3D/Town/Buildings/house_purple.tscn" id="9_dss4m"]
@@ -231,7 +229,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 [node name="left" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.9, -0.6)
 tracker = &"left_hand"
-script = ExtResource("4_x28ej")
 
 [node name="LeftHand" parent="XROrigin3D/left" instance=ExtResource("2_6oujy")]
 
@@ -242,7 +239,6 @@ script = ExtResource("4_x28ej")
 [node name="right" type="XRController3D" parent="XROrigin3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0.9, -0.6)
 tracker = &"right_hand"
-script = ExtResource("8_1jxku")
 
 [node name="RightHand" parent="XROrigin3D/right" instance=ExtResource("4_6oujy")]
 
@@ -750,6 +746,3 @@ skeleton = NodePath("")
 
 [node name="Agent" parent="." instance=ExtResource("39_l8ah6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.42102, -0.010104667, -50.512367)
-
-[connection signal="button_pressed" from="XROrigin3D/left" to="NavigationRegion3D/MainSquare/Barrell" method="_on_left_button_pressed"]
-[connection signal="button_pressed" from="XROrigin3D/left" to="NavigationRegion3D/MainSquare/Crate2" method="_on_left_button_pressed"]
