@@ -76,4 +76,3 @@ interact={
 [xr]
 
 openxr/enabled=true
-shaders/enabled=true

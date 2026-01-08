@@ -1,19 +1,13 @@
 [gd_scene load_steps=56 format=4 uid="uid://cl86yynqeup8p"]
 
-[ext_resource type="Script" uid="uid://cvpxi4w68s6ct" path="res://scenes/world.gd" id="1_hi6a0"]
+[ext_resource type="Script" uid="uid://ck4yn3hxuobj7" path="res://addons/godot-xr-tools/player/player_body.gd" id="1_8u370"]
 [ext_resource type="PackedScene" uid="uid://bjxwtde3c4v88" path="res://scenes/terrain.tscn" id="1_rwgxs"]
-[ext_resource type="PackedScene" uid="uid://b4kad2kuba1yn" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/left_hand_low.tscn" id="2_6oujy"]
 [ext_resource type="Texture2D" uid="uid://dx2u3kl40tn3b" path="res://assets/skybox/AllSkyFree_Sky_ColdNight_Equirect.png" id="2_e75v4"]
 [ext_resource type="PackedScene" uid="uid://5h54gv7mydqh" path="res://assets/3D/Town/Street/plane_004.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://p4nt5ujaulag" path="res://scenes/graveyard.tscn" id="3_8u370"]
-[ext_resource type="PackedScene" uid="uid://diyu06cw06syv" path="res://addons/godot-xr-tools/player/player_body.tscn" id="3_eo1xk"]
-[ext_resource type="PackedScene" uid="uid://l2n30mpbkdyw" path="res://addons/godot-xr-tools/hands/scenes/lowpoly/right_hand_low.tscn" id="4_6oujy"]
 [ext_resource type="PackedScene" uid="uid://qrrglr5ks0nk" path="res://assets/3D/Town/Street/bench.tscn" id="4_q5onr"]
-[ext_resource type="PackedScene" uid="uid://fiul51tsyoop" path="res://addons/godot-xr-tools/functions/function_teleport.tscn" id="5_4wdv8"]
 [ext_resource type="PackedScene" uid="uid://dxw0ilquo4p6b" path="res://scenes/forest.tscn" id="6_8u370"]
-[ext_resource type="PackedScene" uid="uid://bl2nuu3qhlb5k" path="res://addons/godot-xr-tools/functions/movement_direct.tscn" id="6_18clu"]
 [ext_resource type="PackedScene" uid="uid://c1a5l8lyic0w4" path="res://assets/3D/Town/Street/fountain.tscn" id="6_jhx03"]
-[ext_resource type="PackedScene" uid="uid://b6bk2pj8vbj28" path="res://addons/godot-xr-tools/functions/movement_turn.tscn" id="7_18clu"]
 [ext_resource type="PackedScene" uid="uid://b7553jx7bg6nt" path="res://assets/3D/Town/Street/fence.tscn" id="7_jhx03"]
 [ext_resource type="PackedScene" uid="uid://bnxrel5icbmy0" path="res://assets/3D/Town/Street/market_stall_red.tscn" id="7_lakw3"]
 [ext_resource type="PackedScene" uid="uid://du2vcbllftwj2" path="res://assets/3D/Town/Buildings/chapel.tscn" id="7_o8fc1"]
@@ -186,7 +180,6 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_y3q12")
 
 [node name="World" type="Node3D"]
-script = ExtResource("1_hi6a0")
 
 [node name="LightForEditing" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.67001253, -0.60569334, 0.42920706, 0.20570472, 0.40405023, 0.89130735, -0.71328014, 0.6854771, -0.14612466, 16.247639, 18.719063, 11.294937)
@@ -215,34 +208,6 @@ light_energy = 0.01
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k0juu")
-
-[node name="XROrigin3D" type="XROrigin3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50.281036, 0.61378, -52.909588)
-
-[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D"]
-transform = Transform3D(-0.23812668, 0, 0.9712341, 0, 1, 0, -0.9712341, 0, -0.23812668, 0, 1.7, 0)
-
-[node name="PlayerBody" parent="XROrigin3D" instance=ExtResource("3_eo1xk")]
-
-[node name="left" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 1, -0.5)
-tracker = &"left_hand"
-
-[node name="LeftHand" parent="XROrigin3D/left" instance=ExtResource("2_6oujy")]
-
-[node name="FunctionTeleport" parent="XROrigin3D/left" instance=ExtResource("5_4wdv8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1)
-
-[node name="right" type="XRController3D" parent="XROrigin3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1, -0.5)
-tracker = &"right_hand"
-
-[node name="RightHand" parent="XROrigin3D/right" instance=ExtResource("4_6oujy")]
-
-[node name="MovementDirect" parent="XROrigin3D/right" instance=ExtResource("6_18clu")]
-max_speed = 6.0
-
-[node name="MovementTurn" parent="XROrigin3D/right" instance=ExtResource("7_18clu")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_ggc52")
