@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgoai10qv50ej"]
+
+[ext_resource type="Script" uid="uid://dgt1uj304akw1" path="res://scenes/npc_ghost.gd" id="1_i0xr4"]
+[ext_resource type="PackedScene" uid="uid://b6yuitgghh720" path="res://assets/lowpolyghost/lowpolyghost.glb" id="2_8vyxv"]
+[ext_resource type="Script" uid="uid://dpita37mltpo5" path="res://scripts/wander.gd" id="3_7no6m"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lgtus"]
+height = 1.0761719
+
+[node name="NpcGhost" type="CharacterBody3D" node_paths=PackedStringArray("wander_direction")]
+script = ExtResource("1_i0xr4")
+wander_direction = NodePath("Wander")
+
+[node name="lowpolyghost" parent="." instance=ExtResource("2_8vyxv")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46191406, 0)
+shape = SubResource("CapsuleShape3D_lgtus")
+
+[node name="Wander" type="Node3D" parent="."]
+script = ExtResource("3_7no6m")
+group_name = "ghost_group"

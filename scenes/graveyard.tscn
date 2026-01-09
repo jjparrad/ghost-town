@@ -642,7 +642,7 @@ omni_range = 14.999
 omni_attenuation = 0.245
 
 [node name="lightpost-single4" parent="." instance=ExtResource("53_3mc26")]
-transform = Transform3D(2.6906183, 0, 1.3268661, 0, 3, 0, -1.3268661, 0, 2.6906183, 1.2318931, 5.6132617, 51.482246)
+transform = Transform3D(2.6906183, 0, 1.3268661, 0, 3, 0, -1.3268661, 0, 2.6906183, 1.2318931, 4.8941636, 51.482246)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lightpost-single4"]
 transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.016654015, 0.9148879, 0.26209068)

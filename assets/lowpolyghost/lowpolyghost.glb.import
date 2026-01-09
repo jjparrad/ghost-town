@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bi8lir0ljftp2"
-path="res://.godot/imported/Dock_Wide.fbx-ee9482aeae6f7d4bad442cdd9cbeea7c.scn"
+uid="uid://b6yuitgghh720"
+path="res://.godot/imported/lowpolyghost.glb-c9187f025f727cd3b196e43abde6e365.scn"
 
 [deps]
 
-source_file="res://assets/3D/Bridge/Dock_Wide.fbx"
-dest_files=["res://.godot/imported/Dock_Wide.fbx-ee9482aeae6f7d4bad442cdd9cbeea7c.scn"]
+source_file="res://assets/lowpolyghost/lowpolyghost.glb"
+dest_files=["res://.godot/imported/lowpolyghost.glb-c9187f025f727cd3b196e43abde6e365.scn"]
 
 [params]
 
@@ -30,21 +30,13 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 materials/extract=0
 materials/extract_format=0
 materials/extract_path=""
-_subresources={
-"nodes": {
-"PATH:Dock_Wide": {
-"generate/physics": true
-}
-}
-}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
-fbx/naming_version=2
+_subresources={}
+gltf/naming_version=2
+gltf/embedded_image_handling=1
