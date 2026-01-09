@@ -10,6 +10,7 @@ var group_name: String
 var positions: Array[Marker3D]
 var temp_positions: Array[Marker3D]
 var current_position: Marker3D
+var waiting: bool = false
 
 var flee_position: Vector3 = Vector3.ZERO
 
@@ -33,10 +34,17 @@ func _physics_process(delta: float) -> void:
 			agent.target_position = flee_position
 		return
 
-	if agent.is_navigation_finished():
-		_set_next_target()
+	if agent.is_navigation_finished() and not waiting:
+		_wait_and_set_next_target()
 
-		
+
+func _wait_and_set_next_target() -> void:
+	waiting = true
+	owner_node.play_idle()
+	_set_next_target()
+	waiting = false
+
+
 func _get_positions():
 	temp_positions = positions.duplicate()
 	temp_positions.shuffle()
