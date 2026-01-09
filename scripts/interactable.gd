@@ -71,7 +71,6 @@ func _process(_delta: float) -> void:
 
 	# Activation du glow
 	if distance <= interaction_distance and not is_glowing:
-		print(distance)
 		_enable_glow()
 
 	# Désactivation du glow
@@ -99,6 +98,7 @@ func interact() -> void:
 		$AnimationPlayer.play("interact")
 
 	# Effet sur les agents proches
+	
 	scare()
 
 	# Cooldown
@@ -106,16 +106,18 @@ func interact() -> void:
 	is_interacting = false
 
 func scare() -> void:
+	print("scare0")
 	for agent in near_agents:
 		if agent.has_method("scare"):
+			print("scare1")
 			agent.scare()
 
 func _on_body_entered(body: Node) -> void:
-	if body.is_in_group("agents"):
+	if body.is_in_group("agent_group"):
 		near_agents.append(body)
 
 func _on_body_exited(body: Node) -> void:
-	if body.is_in_group("agents"):
+	if body.is_in_group("agent_group"):
 		near_agents.erase(body)
 
 

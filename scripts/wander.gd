@@ -12,7 +12,7 @@ func _ready() -> void:
 	positions = get_tree().get_nodes_in_group(group_name)
 	_get_positions()
 	_get_next_position()
-	print(current_position.position)
+
 
 func _physics_process(delta: float) -> void:
 	if global_position.distance_to(current_position.position) < 2 :
