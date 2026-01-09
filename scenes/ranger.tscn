@@ -1,0 +1,65 @@
+[gd_scene load_steps=15 format=3 uid="uid://blgonqa77off7"]
+
+[ext_resource type="PackedScene" uid="uid://b1pc2kucpyevw" path="res://assets/3D/KayKit_Adventurers_2.0_FREE/Characters/fbx/Ranger.fbx" id="1_p2xop"]
+[ext_resource type="Animation" uid="uid://cjnp52kf7xgbk" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Jump_Full_Long.res" id="2_hitb0"]
+[ext_resource type="Animation" uid="uid://b6n5vrvqddjmf" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Jump_Full_Short.res" id="3_x1kyu"]
+[ext_resource type="Animation" uid="uid://bt0eqwnl7ebst" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Jump_Idle.res" id="4_ckbm6"]
+[ext_resource type="Animation" uid="uid://ba0rnbfp2myo4" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Jump_Land.res" id="5_k4tpo"]
+[ext_resource type="Animation" uid="uid://clw6xm745170u" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Jump_Start.res" id="6_hm2h7"]
+[ext_resource type="Animation" uid="uid://dpoje2taxbof2" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Running_A.res" id="7_k5x5t"]
+[ext_resource type="Animation" uid="uid://cwkkypch1uorl" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Running_B.res" id="8_yut2o"]
+[ext_resource type="Animation" uid="uid://wyv1j2dh1ke3" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/T-Pose.res" id="9_n14b0"]
+[ext_resource type="Animation" uid="uid://b2vn71xymwio8" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Walking_A.res" id="10_swtpa"]
+[ext_resource type="Animation" uid="uid://cy3he5pakxxe6" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Walking_B.res" id="11_demhu"]
+[ext_resource type="Animation" uid="uid://belyxw6l2din2" path="res://assets/animation/KayKit_Character_Animations_1.1/Animations/fbx/Rig_Medium/Animations/Walking_C.res" id="12_ofqi8"]
+
+[sub_resource type="Animation" id="Animation_i5k34"]
+resource_name = "idle"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v58aa"]
+_data = {
+&"Jump_Full_Long": ExtResource("2_hitb0"),
+&"Jump_Full_Short": ExtResource("3_x1kyu"),
+&"Jump_Idle": ExtResource("4_ckbm6"),
+&"Jump_Land": ExtResource("5_k4tpo"),
+&"Jump_Start": ExtResource("6_hm2h7"),
+&"Running_A": ExtResource("7_k5x5t"),
+&"Running_B": ExtResource("8_yut2o"),
+&"T-Pose": ExtResource("9_n14b0"),
+&"Walking_A": ExtResource("10_swtpa"),
+&"Walking_B": ExtResource("11_demhu"),
+&"Walking_C": ExtResource("12_ofqi8"),
+&"idle": SubResource("Animation_i5k34")
+}
+
+[node name="Ranger" instance=ExtResource("1_p2xop")]
+
+[node name="Skeleton3D" parent="Rig_Medium" index="0"]
+bones/1/position = Vector3(-2.3665827e-30, 0.39206383, 0)
+bones/1/rotation = Quaternion(-5.3290705e-15, -1.19209275e-07, -6.3527476e-22, 1)
+bones/4/position = Vector3(0.21200736, 0.1341322, 8.487841e-08)
+bones/4/rotation = Quaternion(-0.5879525, -0.108445846, -0.645398, 0.47540817)
+bones/5/rotation = Quaternion(-8.5882705e-09, -6.0117884e-08, -0.4973854, 0.8675298)
+bones/7/rotation = Quaternion(-0.31667742, -0.34757894, 0.22899799, 0.8523287)
+bones/8/rotation = Quaternion(-2.9929524e-08, 3.3290753e-08, -0.7071068, 0.7071067)
+bones/9/position = Vector3(-0.21200736, 0.1341322, 8.487841e-08)
+bones/9/rotation = Quaternion(-0.5802814, 0.15828454, 0.6660533, 0.44112638)
+bones/10/rotation = Quaternion(1.0288513e-08, 6.275985e-08, 0.42497087, 0.9052071)
+bones/12/rotation = Quaternion(-0.35023582, 0.29147264, -0.19676158, 0.86813796)
+bones/13/rotation = Quaternion(-1.4124479e-08, -1.7485677e-08, 0.7071068, 0.7071067)
+bones/14/rotation = Quaternion(-3.5527137e-15, 4.2351647e-22, -7.504057e-29, 1)
+bones/15/position = Vector3(0.17094506, 0.11358729, 1.3923275e-08)
+bones/15/rotation = Quaternion(0.99589103, -1.2840756e-07, -1.6118046e-08, 0.0905608)
+bones/16/rotation = Quaternion(0.2913205, 6.604814e-08, -2.0231269e-07, 0.9566256)
+bones/17/rotation = Quaternion(-0.5549109, -4.5703388e-08, -1.1260332e-08, 0.83190984)
+bones/18/rotation = Quaternion(1.3374381e-08, 0.9202352, -0.39136592, 1.3901206e-07)
+bones/19/position = Vector3(-0.17094506, 0.11358729, 1.3923275e-08)
+bones/19/rotation = Quaternion(0.99589103, 1.3462487e-07, -2.7306665e-08, 0.0905608)
+bones/20/rotation = Quaternion(0.2913205, -6.604814e-08, 2.0231269e-07, 0.9566256)
+bones/21/rotation = Quaternion(-0.5549108, 1.8559685e-07, -9.758694e-08, 0.8319099)
+bones/22/rotation = Quaternion(2.2488226e-08, 0.92023516, -0.39136574, 1.3513602e-07)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+libraries = {
+&"anims": SubResource("AnimationLibrary_v58aa")
+}

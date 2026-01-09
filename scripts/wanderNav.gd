@@ -27,15 +27,12 @@ func _ready() -> void:
 	_set_next_target()
 	
 func _physics_process(delta: float) -> void:
-
-	# --- PRIORITÉ : fuite ---
 	if owner_node.scared:
 		flee_position = owner_node.flee_position
 		if agent.target_position != flee_position:
 			agent.target_position = flee_position
 		return
 
-	# --- Wander normal ---
 	if agent.is_navigation_finished():
 		_set_next_target()
 

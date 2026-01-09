@@ -2,17 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dmgggtmr27eie" path="res://scripts/agent.gd" id="1_b2pv0"]
 [ext_resource type="Script" uid="uid://cnuukx1g2tkhq" path="res://scripts/wanderNav.gd" id="2_umeaf"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_go1c3"]
+[ext_resource type="PackedScene" uid="uid://lcgxhmwi43l4" path="res://scenes/barbarian.tscn" id="3_yc63n"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b2pv0"]
 
-[node name="Agent" type="CharacterBody3D"]
+[node name="Agent_1" type="CharacterBody3D"]
 script = ExtResource("1_b2pv0")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-mesh = SubResource("CapsuleMesh_go1c3")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
@@ -23,3 +18,5 @@ shape = SubResource("CapsuleShape3D_b2pv0")
 
 [node name="wander" type="Node3D" parent="."]
 script = ExtResource("2_umeaf")
+
+[node name="Character" parent="." instance=ExtResource("3_yc63n")]

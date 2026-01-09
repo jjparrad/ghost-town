@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dipvphgqrb6bs"]
+
+[ext_resource type="Script" uid="uid://dmgggtmr27eie" path="res://scripts/agent.gd" id="1_i2slb"]
+[ext_resource type="Script" uid="uid://cnuukx1g2tkhq" path="res://scripts/wanderNav.gd" id="2_cstrl"]
+[ext_resource type="PackedScene" uid="uid://drwp3oryf1r5q" path="res://scenes/mage.tscn" id="3_i2slb"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b2pv0"]
+
+[node name="Agent_3" type="CharacterBody3D"]
+script = ExtResource("1_i2slb")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0.99615145, 0)
+shape = SubResource("CapsuleShape3D_b2pv0")
+
+[node name="wander" type="Node3D" parent="."]
+script = ExtResource("2_cstrl")
+
+[node name="Character" parent="." instance=ExtResource("3_i2slb")]
