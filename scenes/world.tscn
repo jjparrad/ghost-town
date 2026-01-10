@@ -249,6 +249,7 @@ transform = Transform3D(-0.7806378, 0.62498385, 2.7318913e-08, 8.8707606e-16, -4
 
 [node name="Hay_Cart" parent="NavigationRegion3D/Windmill" instance=ExtResource("28_817gm")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 29.422499, 0.22737001, -33.67548)
+script = ExtResource("10_rga7q")
 
 [node name="Windmill" parent="NavigationRegion3D/Windmill" instance=ExtResource("24_37qwj")]
 transform = Transform3D(-0.4645948, 0.8855235, 3.8707462e-08, 1.5040655e-15, -4.371139e-08, 1, 0.8855235, 0.4645948, 2.030809e-08, 68.98209, 0.25699857, -7.066428)
@@ -322,6 +323,7 @@ script = ExtResource("10_rga7q")
 
 [node name="Hay_Cart2" parent="NavigationRegion3D/Farm" instance=ExtResource("28_817gm")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -33.990788, 0.14637208, -59.648994)
+script = ExtResource("10_rga7q")
 
 [node name="Farm_Carrot" parent="NavigationRegion3D/Farm" instance=ExtResource("29_ggc52")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -30.547493, -0.090360746, -73.86421)
@@ -848,7 +850,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.816265, 0.8896527, -37.629
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.32711, 0.88965297, -36.931812)
 
 [node name="Audio" parent="." instance=ExtResource("59_e6ckp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.887375, 0)
 
 [connection signal="button_pressed" from="XROrigin3D/left" to="NavigationRegion3D/MainSquare/Barrell" method="_on_left_button_pressed"]
 [connection signal="button_pressed" from="XROrigin3D/left" to="NavigationRegion3D/MainSquare/Crate2" method="_on_left_button_pressed"]

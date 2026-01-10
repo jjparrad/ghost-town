@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://boa4xwiuipqp2"]
+
+[ext_resource type="PackedScene" uid="uid://dk3es50eoqmoo" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/road.glb" id="1_1ln8j"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1ln8j"]
+radius = 4.0461335
+
+[sub_resource type="Animation" id="Animation_1ln8j"]
+resource_name = "interact"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0.3, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_wg4tp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yl322"]
+_data = {
+&"RESET": SubResource("Animation_wg4tp"),
+&"interact": SubResource("Animation_1ln8j")
+}
+
+[node name="road2" instance=ExtResource("1_1ln8j")]
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="Area3D2" type="Area3D" parent="." index="2"]
+
+[node name="Area3D3" type="Area3D" parent="." index="3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D3" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.371139e-08, -0.016173601)
+shape = SubResource("SphereShape3D_1ln8j")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+libraries = {
+&"": SubResource("AnimationLibrary_yl322")
+}
