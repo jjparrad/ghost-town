@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://ygl24pktsldw"]
+[gd_scene load_steps=9 format=4 uid="uid://ygl24pktsldw"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_qbhg4"]
 
@@ -36,20 +36,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_68sr7")
 
-[sub_resource type="Animation" id="Animation_5mvmu"]
-resource_name = "interact"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Shroom_Material_005_0:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.33, 0.66, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.5235988, 0, 0), Vector3(0.5235988, 0, 0), Vector3(0, 0, 0)]
-}
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5mvmu"]
+points = PackedVector3Array(-0.8480955, -0.48964813, 0.69036025, -0.00016611814, -0.97929627, 0.69036025, -0.30716074, -0.7599707, 0.79813117, -0.39764857, -0.6646868, 0.88732606, -0.38536215, -0.601995, 1.0326915, -0.68023634, -0.3928305, 1.0931375, -0.7371856, -0.08972412, 1.0406526, -0.74449104, 0.068826735, 1.0331337, -0.8480955, 0.48964804, 0.69036025, -0.35580832, -0.20552188, 0.11509038, -0.00016611814, -0.78546923, 1.0931375, -0.046655297, -0.7753082, 1.0788369, -0.058941722, -0.83819175, 0.9336189, -0.16686302, -0.831865, 0.81729704, -1.1920929e-07, -0.41085202, 0.11509038, 0.84809524, -0.48983985, 0.69036025, -0.27744085, -0.60832167, 1.1490133, -0.19442445, -0.34202516, 1.4012651, -0.37755862, -0.21798354, 1.3719267, -0.5427612, -0.18385774, 1.2392402, -0.6536711, -0.19421047, 1.1260144, -0.5605267, 0.19862002, 1.2211063, -0.6712706, 0.18826717, 1.1078805, -0.68023634, 0.39263874, 1.0931375, -1.1920929e-07, 0.97929627, 0.69036025, -0.35580832, 0.20533007, 0.11509038, -0.23493648, -0.13573647, -0.02334591, -1.1920929e-07, -0.4359671, 1.3719267, -0.13714314, -0.68002427, 1.1680317, 0.6800701, -0.3928305, 1.0931375, 0.4245457, -0.30559874, 1.3474534, -1.1920929e-07, -0.27128118, -0.02334591, 0.35564214, -0.20552188, 0.11509038, 0.84809524, 0.48964804, 0.69036025, -0.24440032, -0.19574422, 1.4376802, -0.052466452, -0.4110437, 1.3834262, 0.09829128, -0.3623473, 1.3947783, -0.022414505, -0.00920248, 1.4827937, -0.37755862, 0.21779174, 1.3719267, -0.46954077, -0.0644173, 1.3139869, -0.47684622, 0.094133556, 1.306468, -0.28906316, 0.3364653, 1.3341848, -0.2970327, 0.45858973, 1.2331955, -0.19708097, 0.57323724, 1.1876398, -1.1920929e-07, 0.7852774, 1.0931375, -1.1920929e-07, 0.4106602, 0.11509038, -0.23493648, 0.13554472, -0.02334591, 0.6800701, 0.39263874, 1.0931375, 0.6443731, -0.06556761, 1.1450328, 0.6317546, -0.22335166, 1.1566796, 0.5406026, -0.3228534, 1.240567, 0.45526177, 0.07553691, 1.3192943, 0.3641098, -0.023964822, 1.4031818, 0.3513252, -0.1817488, 1.4148287, 0.23477024, -0.13573647, -0.02334591, 0.35564214, 0.20533007, 0.11509038, -0.1731723, -0.05789888, 1.4714416, 0.16951936, -0.22450197, 1.4285396, 0.11954349, -0.07822102, 1.4649547, -0.028889775, 0.31825203, 1.468493, -0.17798722, 0.27818304, 1.4316356, 0.07106191, 0.43309122, 1.4230847, -0.04781753, 0.61330634, 1.2244972, 0.06325841, 0.55521566, 1.321948, -1.1920929e-07, 0.27108938, -0.02334591, 0.37739235, 0.21779174, 1.3719267, 0.5713187, 0.058282316, 1.2122606, 0.23477024, 0.13554472, -0.02334591)
 
 [sub_resource type="Animation" id="Animation_nkq4u"]
 length = 0.001
@@ -66,6 +54,21 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5mvmu"]
+resource_name = "interact"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shroom_Material_005_0:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.33, 0.66, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.5235988, 0, 0), Vector3(0.5235988, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_e0514"]
 _data = {
 &"RESET": SubResource("Animation_nkq4u"),
@@ -75,12 +78,15 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_5mvmu"]
 radius = 4.0461335
 
-[node name="Shroom" type="Node3D"]
+[node name="Shroom" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Shroom_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_a2f71")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_5mvmu")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

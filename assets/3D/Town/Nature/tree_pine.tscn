@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://cy15yt572as4o"]
+[gd_scene load_steps=5 format=4 uid="uid://cy15yt572as4o"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_y2qee"]
 
@@ -34,9 +34,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ral6p")
 
-[node name="Tree_Pine" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_eymxs"]
+points = PackedVector3Array(2.1558392, 0.7082995, 1.3630888, 1.3277318, -1.8411268, 1.3630888, 0.97674036, 0.31732452, 2.8285143e-08, -0.00031018257, 1.026682, 2.8285143e-08, -0.00031018257, 2.1893497, 1.4536716, 0.5120709, 1.6496385, 3.2646015, 0.9530921, 0.96197975, 4.6472564, 1.7152331, 0.01314497, 3.2646015, -1.2872788, -1.7712957, 1.4536716, -0.60396564, -0.8311405, 2.8285143e-08, 0.6033454, -0.8311405, 2.8285143e-08, 1.284169, -0.5411639, 4.664648, 0.5207834, -1.5752163, 3.2790947, -0.9769459, 0.31732452, 2.8285143e-08, -1.4163074, 1.01169, 3.2646015, -0.73548377, 1.0523263, 4.608849, -2.0821955, 0.6763431, 1.4536716, 0.010476828, 0.0048599243, 7.403145, -0.06171298, -1.3712465, 4.6820397, -1.4051056, -1.0197239, 3.2646015, -1.3511708, -0.35849845, 4.6052256)
+
+[node name="Tree_Pine" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Tree_Pine_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_87806")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_eymxs")

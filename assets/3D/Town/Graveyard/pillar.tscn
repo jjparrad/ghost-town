@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://sqv73uj1xbgm"]
+[gd_scene load_steps=5 format=4 uid="uid://sqv73uj1xbgm"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_0xemj"]
 
@@ -34,9 +34,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_jwhf6")
 
-[node name="Pillar" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rxiho"]
+points = PackedVector3Array(0.4564501, 0.4725167, -2.9802322e-07, 0.4564501, -0.4725167, -2.9802322e-07, -0.48858345, 0.4725167, -2.9802322e-07, 0.36958772, 0.38565424, 2.9190361, -0.48858345, -0.4725167, -2.9802322e-07, 0.36958772, -0.38574678, 2.9190361, -0.40181354, 0.38565424, 2.9190361, 0.1699614, 0.18602797, 3.1383786, -0.40181354, -0.38574678, 2.9190361, 0.1699614, -0.18612051, 3.1383786, -0.20218721, 0.18602797, 3.1383786, -0.20218721, -0.18612051, 3.1383786)
+
+[node name="Pillar" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Pillar_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_nln54")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_rxiho")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://dhttoehn7vxnx"]
+[gd_scene load_steps=6 format=4 uid="uid://dhttoehn7vxnx"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_gjf5r"]
 
@@ -36,12 +36,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pj3ep")
 
-[node name="House_Purple" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sqbc4"]
+points = PackedVector3Array(-0.9847999, 4.2745237, 8.680211, 4.6870046, 4.450127, 5.5242567, 4.6869917, -4.4849157, 5.524261, -4.550956, 4.7690663, 4.6297483, -4.863894, -4.6532955, 5.162385, 0.14162518, -4.188824, 9.395417, 3.9338105, -4.0272365, 4.565254, 4.5507097, 4.7690663, 4.6297483, 0.14162518, 4.295886, 9.395417, -3.9381244, -4.031384, 4.5626717, -4.6859913, 4.448927, 5.5251427, -0.28450364, -4.3713613, 9.274473, 4.8637404, -4.6533833, 5.162349, 3.9698322, 4.029153, 4.5423923, -4.6859784, -4.4837155, 5.525147, -3.9700773, 4.029153, 4.5423923, 4.5592575, -4.6536098, 4.858317, -4.8813415, 4.635125, 5.1555705, -4.5594134, -4.653518, 4.858361, 4.881188, 4.635213, 5.1555347, -0.141016, 4.296839, 9.395932, 4.1548586, 4.3527184, 5.987759, -3.9763136, -4.349199, 6.1393995, 0.28508845, -4.370387, 9.273978, 4.8164024, -4.457272, 5.030597, 4.4703956, -4.413739, 4.752018, -4.816447, -4.457086, 5.030682, -4.4705944, -4.413693, 4.7520423, 4.154847, -4.387507, 5.987762, -0.141016, -4.189746, 9.395932, -3.8016734, 4.277921, 6.287737)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8dfq0"]
+points = PackedVector3Array(-4.246153, -4.1850796, 0, -4.0935836, 4.15028, 0, -3.9638908, 4.0214534, 4.407126, 3.9195642, -4.015771, 4.384977, 4.0813937, -4.1776066, 0.0039398517, -3.931034, -4.0220976, 4.388438, 3.9600446, 4.0214534, 4.407126, 4.088866, 4.15028, 4.440892e-16, -4.230359, -1.9039555, 0.008327046)
+
+[node name="House_Purple" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="House_Purple_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_w127q")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_sqbc4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_8dfq0")
 
 [node name="NavigationObstacle3D" type="NavigationObstacle3D" parent="."]
 transform = Transform3D(-4.371139e-08, 5.343785, 0, -1, -2.3358426e-07, 0, 0, 0, 1.0000001, 0, 0, 0)

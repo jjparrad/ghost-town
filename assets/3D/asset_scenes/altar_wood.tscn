@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d0wu0fk6e16rm"]
+
+[ext_resource type="PackedScene" uid="uid://bxi40kyc6nl84" path="res://assets/3D/kenney_graveyard-kit/Models/FBX format/altar-wood.fbx" id="1_myjhy"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_myjhy"]
+points = PackedVector3Array(-0.52845, 0, -0.3266, -0.52845, 0, 0.3266, -0.52845, 0.05999217, -0.3266, 0.52845, 0, -0.3266, -0.52845, 0.05999217, 0.3266, 0.52845, 0, 0.3266, -0.47548085, 0.47, -0.28203458, 0.52845, 0.05999217, -0.3266, -0.47548085, 0.47, 0.28197065, 0.52845, 0.05999217, 0.3266, 0.47537744, 0.47, -0.28203458, 0.47537744, 0.47, 0.28197065)
+
+[node name="altar-wood" instance=ExtResource("1_myjhy")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+shape = SubResource("ConvexPolygonShape3D_myjhy")

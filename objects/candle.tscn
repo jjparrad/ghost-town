@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://cx4gvsvu5uden"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_7xen6"]
+[ext_resource type="PackedScene" uid="uid://cxpr53y4clofs" path="res://assets/3D/kenney_graveyard-kit/Models/FBX format/candle.fbx" id="2_4cycn"]
+[ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="3_qgs4w"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ubi45"]
+radius = 0.05
+height = 0.25
+
+[sub_resource type="SphereMesh" id="SphereMesh_h37ko"]
+flip_faces = true
+radius = 0.11
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4him"]
+shading_mode = 0
+albedo_color = Color(0.40919575, 0.7693748, 0.35391948, 1)
+
+[node name="Candle" instance=ExtResource("1_7xen6")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.067106545, 0)
+shape = SubResource("CapsuleShape3D_ubi45")
+
+[node name="candle" parent="." index="1" instance=ExtResource("2_4cycn")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16237348, 0)
+light_color = Color(0.79138523, 0.5133945, 0.12236387, 1)
+omni_range = 2.0
+omni_attenuation = 2.0
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07074489, 0)
+script = ExtResource("3_qgs4w")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="HilightMesh" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0"]
+mesh = SubResource("SphereMesh_h37ko")
+surface_material_override/0 = SubResource("StandardMaterial3D_r4him")

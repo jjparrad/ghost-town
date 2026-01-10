@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://dqiu3blts40rw"]
+[gd_scene load_steps=5 format=4 uid="uid://dqiu3blts40rw"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_81mjs"]
 
@@ -34,9 +34,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_dx7tr")
 
-[node name="Boulder_001" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_0lv2r"]
+points = PackedVector3Array(-2.6361175, -0.00014638901, -1.8626451e-08, -2.0643733, -2.055075, -1.8626451e-08, -2.0284808, -2.0761566, 1.4426252, -2.348134, -0.0064709187, 1.4426252, -2.2058313, 1.6484344, -1.8626451e-08, -0.9335526, -2.4561522, -1.8626451e-08, 0.19726801, -2.8567026, -1.8626451e-08, 0.15673065, -2.5241404, 1.4426252, -0.8246087, -1.6487272, 2.8005352, -1.4647596, -1.3830991, 2.8005352, -1.5496345, -0.32638407, 2.8005352, -1.999767, 1.7248552, 0.79862547, -1.1028801, 2.5275366, -1.8626451e-08, 1.6777225, -1.7599326, 0.79862547, 1.6485863, -1.6487272, 1.6485187, 1.2693942, -1.4895612, -1.8626451e-08, -0.00035119057, -1.6487272, 2.8005352, -0.8246087, -0.00014638901, 2.8005352, -1.4563143, 1.4492133, 1.6485187, -1.0306731, 2.3277886, 0.79862547, -0.00035119057, 2.5275366, -1.8626451e-08, 1.6485863, -0.00014638901, -1.8626451e-08, 1.6485863, 1.6484344, -1.8626451e-08, 0.96789813, 1.3759544, 1.1207623, -0.00035119057, -0.00014638901, 2.8005352, -0.8246087, 1.6484344, 1.6485187, 0.046519995, 2.3277886, 0.79862547, -0.00035119057, 1.6484344, 1.6485187)
+
+[node name="Boulder_001" type="StaticBody3D"]
 transform = Transform3D(-0.70710677, 0.70710677, 3.090862e-08, 0, -4.371139e-08, 1, 0.70710677, 0.70710677, 3.090862e-08, 0, 0, 0)
 
 [node name="Boulder_001_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_ttpjo")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_0lv2r")

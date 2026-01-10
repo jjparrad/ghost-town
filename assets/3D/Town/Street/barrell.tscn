@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://dwufn3uted8gv"]
+[gd_scene load_steps=10 format=4 uid="uid://dwufn3uted8gv"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_6kb35"]
 [ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://scripts/interactable.gd" id="1_f1cgx"]
@@ -34,6 +34,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_q5ldt")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_f1cgx"]
+points = PackedVector3Array(0, 1.2039037, 0.55692434, 0, 1.1381462, 0.30036423, -0.8048808, 0.80464506, 0.30036423, -0.8513117, 0.8510759, 0.55692434, -0.8437696, 0.843534, 1.5011563, 0, 1.1928263, 1.5011563, 0.843534, 0.843534, 1.5011563, 0.8510759, 0.8510759, 0.55692434, 0.80464506, 0.80464506, 0.30036423, 0.6335343, 0.6335343, -0.056588918, 0, 0.8958571, -0.056588918, -0.63377, 0.6335343, -0.056588918, -1.138382, 0, 0.30036423, -1.2039037, 0, 0.55692434, -1.193062, 0, 1.5011563, -1.1254189, 0, 1.7424302, -0.79592454, 0.79568887, 1.7424302, 0, 1.1251833, 1.7424302, 1.1251833, 0, 1.7424302, 1.1928263, 0, 1.5011563, 1.2039037, 0, 0.55692434, 0.79568887, 0.79568887, 1.7424302, 1.1381462, 0, 0.30036423, 0.8958571, 0, -0.056588918, -0.8960928, 0, -0.056588918, -0.63377, -0.63377, -0.056588918, -0.8048808, -0.8048808, 0.30036423, -0.8513117, -0.8513117, 0.55692434, -0.8437696, -0.8437696, 1.5011563, -0.79592454, -0.79592454, 1.7424302, -0.63377, -0.63377, 2.0537314, -0.8960928, 0, 2.0537314, -0.63377, 0.6335343, 2.0537314, 0, 0.8958571, 2.0537314, 0.6335343, 0.6335343, 2.0537314, 0.8958571, 0, 2.0537314, 0.6335343, -0.63377, 2.0537314, 0.79568887, -0.79592454, 1.7424302, 0.843534, -0.8437696, 1.5011563, 0.8510759, -0.8513117, 0.55692434, 0.80464506, -0.8048808, 0.30036423, 0.6335343, -0.63377, -0.056588918, -0.00023567677, -0.8960928, -0.056588918, -0.00023567677, -1.138382, 0.30036423, -0.00023567677, -1.2039037, 0.55692434, -0.00023567677, -1.193062, 1.5011563, -0.00023567677, -1.1254189, 1.7424302, -0.00023567677, -0.8960928, 2.0537314)
 
 [sub_resource type="Animation" id="Animation_ajoky"]
 length = 0.001
@@ -99,13 +102,16 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_f1cgx"]
 radius = 7.739621
 
-[node name="Barrell" type="Node3D"]
+[node name="Barrell" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 script = ExtResource("1_f1cgx")
 
 [node name="Barrell_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_dqwb7")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_f1cgx")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

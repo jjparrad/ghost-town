@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://c0yb0wbsn2awp"]
+[gd_scene load_steps=5 format=4 uid="uid://c0yb0wbsn2awp"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_k7mtu"]
 
@@ -36,9 +36,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_pnram")
 
-[node name="Tomb_001" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_m7erm"]
+points = PackedVector3Array(-1.1920929e-07, 1.9213514, 3.079071, 1.2043996, 2.189622, 2.0126238, -1.2046458, 2.189622, 2.0126238, -1.1920929e-07, -1.8622358, 3.079071, 1.2565508, 2.283605, -1.7881393e-06, 1.2043996, -2.1305065, 2.0126238, -1.256551, 2.283605, -1.7881393e-06, -1.2046458, -2.1305065, 2.0126238, 1.2565508, -2.2240481, -1.7881393e-06, -1.256551, -2.2240481, -1.7881393e-06)
+
+[node name="Tomb_001" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Tomb_001_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_dfcvw")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_m7erm")

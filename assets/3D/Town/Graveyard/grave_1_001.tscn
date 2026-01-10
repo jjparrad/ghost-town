@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://ubg06ou461t1"]
+[gd_scene load_steps=5 format=4 uid="uid://ubg06ou461t1"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_cuq3w"]
 
@@ -34,9 +34,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7ucpf")
 
-[node name="Grave_1_001" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_lieo7"]
+points = PackedVector3Array(-1.1368463, -2.9790192, 0, 1.1368463, -2.9790192, 0, -1.0613978, -2.9102008, 0.35025477, -1.1368463, 2.978436, 0, 1.0611753, -2.9102008, 0.35025477, 1.1368463, 2.978436, 0, 0, -2.7229915, 0.9763173, -1.0613978, 2.909618, 0.35025477, 1.0611753, 2.909618, 0.35025477, 0, 2.7224083, 0.9763173)
+
+[node name="Grave_1_001" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Grave_1_001_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_ch1ca")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_lieo7")

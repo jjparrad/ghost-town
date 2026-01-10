@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bfpbipgl4xscv"]
+[gd_scene load_steps=9 format=4 uid="uid://bfpbipgl4xscv"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_qjdg0"]
 
@@ -33,6 +33,48 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5coth")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pkyms"]
+points = PackedVector3Array(-0.8896815, -0.9012267, -0.05663961, 0.8896815, -0.9012267, -0.05663961, -0.8708707, -1.4721669, -0.037892923, -0.8896815, -0.9012267, 1.4165616, -0.8896815, 0.7948779, -0.05663961, 0.8896815, -0.9012267, 1.4165616, 0.8706966, -1.4721669, -0.037892923, 0.8896815, 0.7948779, -0.05663961, -0.8708707, -1.4721669, 1.3976707, -0.8896815, 0.7948779, 1.4165616, -0.8708707, 1.4721669, -0.037892923, 0.8706966, -1.4721669, 1.3976707, 0.8896815, 0.7948779, 1.4165616, 0.8706966, 1.4721669, -0.037892923, -0.8708707, 1.4721669, 1.3976707, 0.8706966, 1.4721669, 1.3976707)
+
+[sub_resource type="Animation" id="Animation_gf1d8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Hay_Bale_Material_005_0:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Hay_Bale_Material_005_0:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Hay_Bale_Material_005_0:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_pkyms"]
 resource_name = "interact"
@@ -74,45 +116,6 @@ tracks/2/keys = {
 "values": [Vector3(0, 0, 0), Vector3(0, 0, 0), Vector3(0.17453292, 0.17453292, 0.17453292), Vector3(-0.17453292, 0.17453292, -0.17453292), Vector3(0.17453292, 0.17453292, 0.17453292), Vector3(-0.17453292, -0.17453292, -0.17453292), Vector3(0.17453292, 0.17453292, 0.17453292), Vector3(0, 0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_gf1d8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Hay_Bale_Material_005_0:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(1, 1, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Hay_Bale_Material_005_0:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Hay_Bale_Material_005_0:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_gf1d8"]
 _data = {
 &"RESET": SubResource("Animation_gf1d8"),
@@ -122,12 +125,15 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_g7aaw"]
 radius = 7.739621
 
-[node name="Hay_Bale" type="Node3D"]
+[node name="Hay_Bale" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Hay_Bale_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_xdl0x")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_pkyms")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

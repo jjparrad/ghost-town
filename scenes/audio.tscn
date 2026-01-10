@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7qoqvfbo0tri"]
+
+[ext_resource type="AudioStream" uid="uid://cw2vn3odplcgt" path="res://assets/son/Farores Silent Realm - The Legend of Zelda Skyward Sword.mp3" id="1_6n3bj"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_6n3bj")
+autoplay = true

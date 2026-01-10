@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://c41q07ovov0wy"]
+[gd_scene load_steps=7 format=4 uid="uid://c41q07ovov0wy"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_y28vj"]
 
@@ -36,12 +36,30 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wkp4t")
 
-[node name="Streetlight" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_bunro"]
+points = PackedVector3Array(-0.22615156, -0.22615156, 1.6045583, 0.24871427, 0.24871427, 6.827571, 0.24871427, -0.21157143, 6.827571, -0.23301245, -0.23301245, 7.0633993, -0.22806562, 0.26520848, 1.5835055, 0.26520848, -0.22806562, 1.5835055, -0.21157143, 0.24871427, 6.827571, 0.24871427, 0.24871427, 1.764924)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_e0ic1"]
+points = PackedVector3Array(-0.36486477, -0.36486477, 1.7644285, 0.8624284, 0.8624284, 0.23020291, 0.55531603, 0.55531603, 1.3041428, 0.8624284, -0.82528555, -0.07671428, -0.82528555, 0.8624284, -0.07671428, -0.82528555, -0.82528555, 0.23020291, 0.55531603, -0.5183384, 1.3041428, -0.5183384, 0.55531603, 1.3041428, 0.8624284, 0.8624284, -0.07671428, 0.24853404, 0.24853404, 1.7644285, -0.75, -0.75, 0.005415429, 0.8624284, -0.82528555, 0.23020291, -0.82528555, 0.8624284, 0.23020291, -0.5183384, -0.5183384, 1.4575113, 0.24853404, -0.36486477, 1.7644285, -0.36486477, 0.24853404, 1.7644285, 0.40184245, 0.40184245, 1.6108798, 0.40184245, -0.5183384, 1.4575113, -0.5183384, 0.40184245, 1.4575113, -0.36486477, 0.40184245, 1.6108798, 0.40184245, -0.36486477, 1.6108798)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_tl6py"]
+points = PackedVector3Array(-0.21142122, -0.21142122, 6.8278565, 1.0158571, 1.0158571, 8.8216915, 1.0158571, -0.9787142, 8.8216915, -0.9787142, 1.0158571, 8.8216915, -0.9787142, -0.9787142, 8.8216915, 0.0951055, 0.2485641, 9.742429, 0.4020227, 0.4020227, 6.98136, -0.21142122, -0.21142122, 9.742429, 1.0158571, -0.9787142, 8.51497, -0.9787142, 1.0158571, 8.51497, -0.51833844, -0.51833844, 7.2883673, 0.4020227, -0.36487982, 6.98136, -0.36487982, 0.4020227, 6.98136, 1.0158571, 1.0158571, 8.51497, -0.9787142, -0.9787142, 8.51497, 0.2485641, -0.057962626, 9.742429, 0.2485641, 0.2485641, 6.8278565, -0.21142122, 0.0951055, 9.742429, 0.0951055, -0.21142122, 9.742429, 0.4020227, -0.51833844, 7.2883673, -0.51833844, 0.4020227, 7.2883673, -0.36487982, -0.36487982, 6.98136, 0.2485641, -0.21142122, 6.8278565, -0.21142122, 0.2485641, 6.8278565, 0.2485641, 0.0951055, 9.742429, -0.057962626, 0.2485641, 9.742429)
+
+[node name="Streetlight" type="StaticBody3D"]
 transform = Transform3D(7.54979e-08, -1, -4.371139e-08, 0, -4.371139e-08, 1, -1, -7.54979e-08, -3.300118e-15, 0, 0, 0)
 
 [node name="Streetlight_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_abwim")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_bunro")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_e0ic1")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_tl6py")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 2.4915199e-22, 0, 2.4915199e-22, 1, 0, -2.9884907e-07, 6.83687)

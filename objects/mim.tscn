@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://chwgfgbktex25"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_mp0c1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4cycn"]
+margin = 0.05
+radius = 0.25
+
+[sub_resource type="SphereMesh" id="SphereMesh_ubi45"]
+
+[node name="Cube" instance=ExtResource("1_mp0c1")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+shape = SubResource("SphereShape3D_4cycn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("SphereMesh_ubi45")

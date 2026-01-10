@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://dtyid3rncpqfv"]
+[gd_scene load_steps=5 format=4 uid="uid://dtyid3rncpqfv"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_buvl5"]
 
@@ -34,9 +34,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_lksnc")
 
-[node name="Obelisk" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_pwidq"]
+points = PackedVector3Array(1.0094299, 1.0094299, -5.9604645e-07, 1.0094299, -1.0094299, -5.9604645e-07, -1.0094299, 1.0094299, -5.9604645e-07, 0.3474115, 0.3474115, 4.679653, -1.0094299, -1.0094299, -5.9604645e-07, 0.3474115, -0.3476091, 4.679653, -0.3476091, 0.3474115, 4.679653, 0, 0, 5.079942, -0.3476091, -0.3476091, 4.679653)
+
+[node name="Obelisk" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Obelisk_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_6jwst")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_pwidq")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=4 uid="uid://cni7vlxey0mao"]
+[gd_scene load_steps=5 format=4 uid="uid://cni7vlxey0mao"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_svo58"]
 
@@ -36,9 +36,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_cct82")
 
-[node name="Tombstone_1_001" type="Node3D"]
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_plral"]
+points = PackedVector3Array(1.3246332, 0.77681935, 0, 1.3246332, -0.77681935, 0, -1.3246335, 0.77681935, 0, 1.2188286, 0.71477115, 0.4620963, -1.3246335, -0.77681935, 0, 1.2188286, -0.7149232, 0.4620963, -1.2190881, 0.71477115, 0.4620963, -1.1920929e-07, 0.31404305, 2.6957817, 0.37965214, 0.31404305, 2.6279583, 0.6371621, 0.31404305, 2.4923115, 0.81817114, 0.31404305, 2.1803768, -1.2190881, -0.7149232, 0.4620963, 0.81817114, -0.31419513, 2.1803768, 0.6371621, -0.31419513, 2.4923115, 0.37965214, -0.31419513, 2.6279583, -1.1920929e-07, -0.31419513, 2.6957817, -0.8184306, 0.31404305, 2.1803768, -0.63742155, 0.31404305, 2.4923115, -0.37991154, 0.31404305, 2.6279583, -0.37991154, -0.31419513, 2.6279583, -0.63742155, -0.31419513, 2.4923115, -0.8184306, -0.31419513, 2.1803768)
+
+[node name="Tombstone_1_001" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Tombstone_1_001_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_vdet0")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_plral")

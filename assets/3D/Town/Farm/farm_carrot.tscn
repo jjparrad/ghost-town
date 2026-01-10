@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dxjkmvqra0gao"]
+[gd_scene load_steps=9 format=4 uid="uid://dxjkmvqra0gao"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_nj8gb"]
 
@@ -36,21 +36,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_sjnq8")
 
-[sub_resource type="Animation" id="Animation_8lxeb"]
-resource_name = "interact"
-length = 2.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Farm_Carrot_Material_005_0:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 1.2, 1.4, 1.8333334, 2),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(1, 1, 1), Vector3(1, 1, 1.25), Vector3(1, 1, 1.12), Vector3(1, 1, 1.4), Vector3(1, 1, 1.6), Vector3(1, 1, 1)]
-}
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_8lxeb"]
+points = PackedVector3Array(2.5, 2.484958, -0.13811705, 1.1594558, 1.8075621, 1.2556885, 1.0997455, 1.7710121, 1.3258014, 1.9567347, 1.3952768, 1.3140638, 1.9630971, 1.3216894, 1.3663354, 2.0732183, 1.2276337, 1.3201673, 2.1236296, -1.5141134, 1.2843285, 2.5, -2.4936569, -0.13811705, 2.0110612, 2.484958, -0.13936906, -2.5, 2.484958, -0.13811705, 0.99402905, 1.7057092, 1.3611709, -1.6914644, 1.7310507, 1.3248624, -1.7369812, 1.6725705, 1.3999833, 1.984632, 1.2066782, 1.3810465, 2.0830069, -1.3571916, 1.3486507, 2.0370007, -1.4819493, 1.3735344, 1.9900155, -1.6067071, 1.3473986, 2.0110612, -2.4936569, -0.13936906, 1.96065, -1.6807821, 1.2794769, 1.7541113, -1.7378001, 1.25115, -0.09005475, -1.7948184, 1.3200109, -2.5, -2.4936569, -0.13811705, -2.0115504, 2.484958, -0.13936906, -2.0198708, -1.4259058, 1.2826068, -1.9518402, 1.3918655, 1.3647704, -1.898982, 1.4605799, 1.424867, -1.8965349, 1.6194508, 1.3499027, -0.73071647, 1.5634077, 1.4436473, -0.6685591, 1.4586303, 1.459454, -1.816758, 1.5687683, 1.4380132, -1.2793657, 0.36699986, 1.4511594, -0.2672279, -1.7202561, 1.3833941, -0.1590643, -1.7660656, 1.3719695, -2.0115504, -2.4936569, -0.13936906, -0.29267812, -1.7982297, 1.3071777, -1.6518207, -1.6378965, 1.2519325, -1.8564017, -1.5881884, 1.2796334, -1.8867463, -1.5136261, 1.3481811, -1.9356891, -1.3888683, 1.3735344, -1.9831636, -1.2641106, 1.3469292)
 
 [sub_resource type="Animation" id="Animation_4di1l"]
 length = 0.001
@@ -67,6 +54,22 @@ tracks/0/keys = {
 "values": [Vector3(1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_8lxeb"]
+resource_name = "interact"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Farm_Carrot_Material_005_0:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 1.2, 1.4, 1.8333334, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1, 1, 1), Vector3(1, 1, 1.25), Vector3(1, 1, 1.12), Vector3(1, 1, 1.4), Vector3(1, 1, 1.6), Vector3(1, 1, 1)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_usytu"]
 _data = {
 &"RESET": SubResource("Animation_4di1l"),
@@ -76,12 +79,15 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_8lxeb"]
 radius = 7.739621
 
-[node name="Farm_Carrot" type="Node3D"]
+[node name="Farm_Carrot" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
 
 [node name="Farm_Carrot_Material_005_0" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_qpctl")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_8lxeb")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

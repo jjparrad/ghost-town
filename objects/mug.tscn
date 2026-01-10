@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://cnuvy23xjcicg"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_t22uy"]
+[ext_resource type="PackedScene" uid="uid://c2j878j18v0h4" path="res://assets/3D/KayKit_Adventurers_2.0_FREE/Assets/fbx/mug_empty.fbx" id="2_t22uy"]
+[ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="3_47epr"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="4_2ywd3"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="5_47epr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ubi45"]
+radius = 0.2
+height = 0.8
+
+[sub_resource type="SphereMesh" id="SphereMesh_h37ko"]
+flip_faces = true
+radius = 0.3
+height = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4him"]
+shading_mode = 0
+albedo_color = Color(0.40919575, 0.7693748, 0.35391948, 1)
+
+[node name="Mug" instance=ExtResource("1_t22uy")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.067106545, 0)
+shape = SubResource("CapsuleShape3D_ubi45")
+
+[node name="mug_empty" parent="." index="1" instance=ExtResource("2_t22uy")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="2"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.07074489, 0)
+script = ExtResource("3_47epr")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="HilightMesh" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06900373, 0)
+mesh = SubResource("SphereMesh_h37ko")
+surface_material_override/0 = SubResource("StandardMaterial3D_r4him")
+
+[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("5_47epr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18739082, 0.051985934, -0.1059094)
+visible = true
+
+[node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("4_2ywd3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109254956, 0.033424273, -0.11982742)
+visible = true
