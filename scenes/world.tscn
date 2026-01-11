@@ -880,7 +880,6 @@ transform = Transform3D(0.36856264, 0.9296029, 0, -0.9296029, 0.36856264, 0, 0, 
 
 [node name="Music" parent="." instance=ExtResource("59_e6ckp")]
 volume_db = -15.0
-[node name="Audio" parent="." instance=ExtResource("59_e6ckp")]
 
 [connection signal="button_pressed" from="XROrigin3D/left" to="NavigationRegion3D/MainSquare/Barrell" method="_on_left_button_pressed"]
 [connection signal="button_pressed" from="XROrigin3D/left" to="NavigationRegion3D/MainSquare/Crate2" method="_on_left_button_pressed"]

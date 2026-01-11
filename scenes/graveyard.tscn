@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://p4nt5ujaulag"]
+[gd_scene load_steps=63 format=3 uid="uid://p4nt5ujaulag"]
 
 [ext_resource type="PackedScene" uid="uid://cdxmiogatlxwk" path="res://assets/3D/Town/Graveyard/arch.tscn" id="1_7o2vs"]
 [ext_resource type="PackedScene" uid="uid://0yonhp25btgf" path="res://assets/3D/Town/Graveyard/fence_002.tscn" id="2_parnt"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://gfeqin72k3uh" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-decorative.glb" id="43_qu8hi"]
 [ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://scripts/interactable.gd" id="44_j6ct8"]
 [ext_resource type="PackedScene" uid="uid://b4lknlacafe3f" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-debris.glb" id="44_mu621"]
+[ext_resource type="AudioStream" uid="uid://tjfxa7y41ka1" path="res://assets/son/roblox-ghost.mp3" id="45_5d3e0"]
 [ext_resource type="PackedScene" uid="uid://d0x0u25uba6hm" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-flat-open.glb" id="45_u1dub"]
 [ext_resource type="PackedScene" uid="uid://cofb2widbc8as" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-flat.glb" id="46_14ray"]
 [ext_resource type="PackedScene" uid="uid://cb033o7vupp1y" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-roof.glb" id="47_f3e58"]
@@ -54,6 +55,33 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_u8fkb"]
 radius = 1.4256299
+
+[sub_resource type="Animation" id="Animation_jal2e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-37.384384, 3.7341762, 59.5592)]
+}
 
 [sub_resource type="Animation" id="Animation_r435k"]
 resource_name = "interact"
@@ -83,52 +111,10 @@ tracks/1/keys = {
 "values": [Vector3(-37.384384, 3.7341762, 59.5592), Vector3(-37.384, 5.3, 59.559), Vector3(-37.384, 5.3, 59.559), Vector3(-37.384384, 3.7341762, 59.5592)]
 }
 
-[sub_resource type="Animation" id="Animation_jal2e"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-37.384384, 3.7341762, 59.5592)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mwp4q"]
 _data = {
 &"RESET": SubResource("Animation_jal2e"),
 &"interact": SubResource("Animation_r435k")
-}
-
-[sub_resource type="Animation" id="Animation_5d3e0"]
-resource_name = "interact"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, -0.90448207, 0), Vector3(0, -0.90408057, -0.17453292), Vector3(0, -0.90408057, 0.17453292), Vector3(0, -0.90408057, -0.17453292), Vector3(0, -0.90448207, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_mchq1"]
@@ -146,10 +132,52 @@ tracks/0/keys = {
 "values": [Vector3(0, -0.90448207, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_5d3e0"]
+resource_name = "interact"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.90448207, 0), Vector3(0, -0.90408057, -0.17453292), Vector3(0, -0.90408057, 0.17453292), Vector3(0, -0.90408057, -0.17453292), Vector3(0, -0.90448207, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r435k"]
 _data = {
 &"RESET": SubResource("Animation_mchq1"),
 &"interact": SubResource("Animation_5d3e0")
+}
+
+[sub_resource type="Animation" id="Animation_j6ct8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.827451, 0.4392157, 0.039215688, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_u8fkb"]
@@ -178,33 +206,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.827451, 0.4392157, 0.039215688, 1), Color(0, 0.5617217, 0.9915263, 1), Color(0, 0.5617217, 0.9915263, 1), Color(0.827451, 0.4392157, 0.039215688, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_j6ct8"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("OmniLight3D:light_energy")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [2.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("OmniLight3D:light_color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0.827451, 0.4392157, 0.039215688, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5d3e0"]
@@ -799,7 +800,7 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.180918, 5.19511, 62.76738
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -23.390112, 4.246043, 72.39733)
 
 [node name="gravestone-wide5" parent="." instance=ExtResource("49_s5alu")]
-transform = Transform3D(1.8542786, 0, -2.3583155, 0, 3, 0, 2.3583155, 0, 1.8542786, -29.427008, 3.9559484, 58.066437)
+transform = Transform3D(1.8542787, 0, -2.3583157, 0, 3, 0, 2.3583157, 0, 1.8542787, -29.427008, 3.9559484, 58.066437)
 script = ExtResource("44_j6ct8")
 
 [node name="Area3D" type="Area3D" parent="gravestone-wide5"]
@@ -848,6 +849,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_5d3e0")
 }
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="lightpost-single4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.702747e-08, 1.5334098)
+stream = ExtResource("45_5d3e0")
+volume_db = -1.0
+
 [node name="lightpost-single9" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(-2.9258423, 0, -0.66290927, 0, 3, 0, 0.66290927, 0, -2.9258423, -13.324271, 5.2871323, 60.846657)
 
@@ -879,6 +885,11 @@ shape = SubResource("SphereShape3D_u8fkb")
 libraries = {
 &"": SubResource("AnimationLibrary_5d3e0")
 }
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="lightpost-single10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.702747e-08, 1.5334098)
+stream = ExtResource("45_5d3e0")
+volume_db = -1.0
 
 [node name="lightpost-single11" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(-2.9864287, 0, -0.28503525, 0, 2.9999998, 0, 0.28503525, 0, -2.9864287, -34.085026, 3.8010368, 66.692566)
@@ -912,6 +923,11 @@ libraries = {
 &"": SubResource("AnimationLibrary_5d3e0")
 }
 
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="lightpost-single12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.702747e-08, 1.5334098)
+stream = ExtResource("45_5d3e0")
+volume_db = -1.0
+
 [node name="lightpost-single13" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(0.056126118, 0, -2.9994752, 0, 2.9999998, 0, 2.9994752, 0, 0.056126118, -49.881485, 3.750382, 59.020664)
 script = ExtResource("44_j6ct8")
@@ -933,6 +949,11 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single13/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0.3244419, 0.55464697, 0.48093605)
 shape = SubResource("SphereShape3D_u8fkb")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="lightpost-single13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.702747e-08, 1.5334098)
+stream = ExtResource("45_5d3e0")
+volume_db = -1.0
 
 [node name="lightpost-single15" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(0.056126118, 0, -2.9994752, 0, 2.9999998, 0, 2.9994752, 0, 0.056126118, -51.193264, 3.8706388, 50.178802)
