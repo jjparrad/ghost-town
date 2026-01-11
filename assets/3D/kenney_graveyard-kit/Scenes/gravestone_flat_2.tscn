@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://doicn028rfbl5"]
+
+[ext_resource type="PackedScene" uid="uid://cofb2widbc8as" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-flat.glb" id="1_bce38"]
+
+[node name="gravestone-flat2" instance=ExtResource("1_bce38")]

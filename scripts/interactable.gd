@@ -15,6 +15,8 @@ var is_interacting: bool = false
 @export var interaction_distance: float = 8.0
 @export var interaction_timeout: float = 2.5
 
+
+
 # --- Agents proches ---
 var near_agents: Array = []
 
@@ -96,6 +98,9 @@ func interact() -> void:
 	# Animation
 	if has_node("AnimationPlayer"):
 		$AnimationPlayer.play("interact")
+	if has_node("AudioStreamPlayer3D"):
+		$AudioStreamPlayer3D.play()
+	
 
 	# Effet sur les agents proches
 	

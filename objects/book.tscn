@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3ma14bmkjxh4"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_er0uf"]
+[ext_resource type="PackedScene" uid="uid://e8f0ddk6h7mw" path="res://assets/3D/KayKit_Adventurers_2.0_FREE/Assets/fbx/spellbook_closed.fbx" id="2_er0uf"]
+[ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="3_7kata"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_dxtjv"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_luwxh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3it06"]
+size = Vector3(0.44213867, 0.6867676, 0.6118164)
+
+[sub_resource type="SphereMesh" id="SphereMesh_h37ko"]
+flip_faces = true
+radius = 0.3
+height = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4him"]
+shading_mode = 0
+albedo_color = Color(0.40919575, 0.7693748, 0.35391948, 1)
+
+[node name="Book" instance=ExtResource("1_er0uf")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.7, 0, 0, 0, -0.83115816, -0.00091629475, 0, 0.0010879673, -0.69999945, -0.00055265427, 0.018562013, 0.003668064)
+visible = false
+shape = SubResource("BoxShape3D_3it06")
+
+[node name="spellbook_closed" parent="." index="1" instance=ExtResource("2_er0uf")]
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07074489, 0.026590347)
+visible = false
+script = ExtResource("3_7kata")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="HilightMesh" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1.1877576, 0.02595014, 0, -0.030832864, 0.99966323, -0.008622572, -0.06640185, -0.007393025)
+mesh = SubResource("SphereMesh_h37ko")
+surface_material_override/0 = SubResource("StandardMaterial3D_r4him")
+
+[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("4_dxtjv")]
+transform = Transform3D(-0.0054803058, -7.450581e-09, -0.9999851, 0.10792834, -0.9941586, -0.00059147924, -0.99414355, -0.10792997, 0.005448293, 0.11466156, -0.058408085, -0.17740434)
+
+[node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("5_luwxh")]
+transform = Transform3D(0.051115833, 0, 0.9986928, -0.12449502, -0.9921998, 0.0063719973, 0.9909027, -0.12465798, -0.050717123, -0.122242585, -0.04477111, -0.17200121)
+visible = true
+
+[node name="Area3D" type="Area3D" parent="." index="5"]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(0.7, 0, 0, 0, -0.83115816, -0.00091629475, 0, 0.0010879673, -0.69999945, -0.00055265427, 0.018562013, 0.003668064)
+shape = SubResource("BoxShape3D_3it06")

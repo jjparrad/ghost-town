@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=4 uid="uid://bfpbipgl4xscv"]
+[gd_scene load_steps=10 format=4 uid="uid://bfpbipgl4xscv"]
 
 [ext_resource type="Material" uid="uid://cw8way36gb01p" path="res://assets/materials/main.tres" id="1_qjdg0"]
+[ext_resource type="AudioStream" uid="uid://tjfxa7y41ka1" path="res://assets/son/roblox-ghost.mp3" id="2_gf1d8"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5coth"]
 _surfaces = [{
@@ -145,3 +146,8 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -4.371139e-08, 1)
 shape = SubResource("SphereShape3D_g7aaw")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.702747e-08, 1.5334098)
+stream = ExtResource("2_gf1d8")
+volume_db = -1.0

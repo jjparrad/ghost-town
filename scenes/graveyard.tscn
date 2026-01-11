@@ -639,7 +639,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single4" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(2.6906183, 0, 1.3268661, 0, 3, 0, -1.3268661, 0, 2.6906183, 1.2318931, 4.8941636, 51.482246)
@@ -649,7 +649,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single9" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(-2.9258423, 0, -0.66290927, 0, 3, 0, 0.66290927, 0, -2.9258423, -13.324271, 5.2871323, 60.846657)
@@ -659,7 +659,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single10" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(2.277678, 0, 1.9524817, 0, 3, 0, -1.9524817, 0, 2.277678, -22.211334, 4.5489697, 59.933384)
@@ -669,7 +669,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single11" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(-2.9864287, 0, -0.28503525, 0, 2.9999998, 0, 0.28503525, 0, -2.9864287, -34.085026, 3.8010368, 66.692566)
@@ -679,7 +679,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single12" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(2.810585, 0, 1.0491015, 0, 2.9999998, 0, -1.0491015, 0, 2.810585, -42.009335, 3.8010368, 63.35504)
@@ -689,7 +689,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single13" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(0.056126118, 0, -2.9994752, 0, 2.9999998, 0, 2.9994752, 0, 0.056126118, -49.881485, 3.750382, 59.020664)
@@ -699,7 +699,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single15" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(0.056126118, 0, -2.9994752, 0, 2.9999998, 0, 2.9994752, 0, 0.056126118, -51.193264, 3.8706388, 50.178802)
@@ -709,7 +709,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="lightpost-single14" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(-1.7819839, 0, 2.4134073, 0, 2.9999995, 0, -2.4134073, 0, -1.7819839, -63.031704, 4.3396583, 52.57075)
@@ -719,7 +719,7 @@ transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.
 light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
-omni_attenuation = 0.245
+omni_attenuation = 1.2
 
 [node name="pillar-large2" parent="." instance=ExtResource("54_le6hh")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -32.011253, 3.9468336, 50.304695)

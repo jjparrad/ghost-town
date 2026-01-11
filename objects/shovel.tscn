@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bl516kjguhbm8"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_eul5u"]
+[ext_resource type="PackedScene" uid="uid://b7qdvlqbi8hie" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/shovel.glb" id="2_eul5u"]
+[ext_resource type="Script" uid="uid://0b7wkxi4vymb" path="res://addons/godot-xr-tools/objects/highlight/highlight_visible.gd" id="3_ajykq"]
+[ext_resource type="PackedScene" uid="uid://ctw7nbntd5pcj" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_right.tscn" id="4_cnubi"]
+[ext_resource type="PackedScene" uid="uid://c25yxb0vt53vc" path="res://addons/godot-xr-tools/objects/grab_points/grab_point_hand_left.tscn" id="5_xdg86"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ubi45"]
+radius = 0.10546875
+height = 0.8437988
+
+[sub_resource type="SphereMesh" id="SphereMesh_h37ko"]
+flip_faces = true
+radius = 0.3
+height = 0.8
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r4him"]
+shading_mode = 0
+albedo_color = Color(0.40919575, 0.7693748, 0.35391948, 1)
+
+[node name="Shovel" instance=ExtResource("1_eul5u")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(0.7, 0, 0, 0, 0.049886722, -0.69873804, 0, 0.8296603, 0.042014495, 0, -0.0061894464, 0.06976397)
+shape = SubResource("CapsuleShape3D_ubi45")
+
+[node name="shovel2" parent="." index="1" instance=ExtResource("2_eul5u")]
+
+[node name="XRToolsHighlightVisible" type="Node3D" parent="." index="2"]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.07074489, 0)
+visible = false
+script = ExtResource("3_ajykq")
+metadata/_custom_type_script = "uid://0b7wkxi4vymb"
+
+[node name="HilightMesh" type="MeshInstance3D" parent="XRToolsHighlightVisible" index="0"]
+transform = Transform3D(1, 0, 0, 0, 0.057979118, -0.9988087, 0, 1.1867423, 0.04879749, 0, -0.06304251, 0.12201701)
+mesh = SubResource("SphereMesh_h37ko")
+surface_material_override/0 = SubResource("StandardMaterial3D_r4him")
+
+[node name="GrabPointHandRight" parent="." index="3" instance=ExtResource("4_cnubi")]
+transform = Transform3D(1, 0, 0, 0, 0.029491752, 0.999565, 0, -0.999565, 0.029491752, -0.010306761, -0.08895694, -0.11006786)
+visible = true
+
+[node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("5_xdg86")]
+transform = Transform3D(1, 0, 0, 0, -0.089346245, 0.99600065, 0, -0.99600065, -0.089346245, 0.010838911, -0.07812249, -0.10982112)
+visible = true
+
+[node name="Area3D" type="Area3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(0.9, 0, 0, 0, -0.00030491687, -0.89999986, 0, 0.64699996, -0.0004241502, 0, -0.010425091, 0.08657159)
+shape = SubResource("CapsuleShape3D_ubi45")

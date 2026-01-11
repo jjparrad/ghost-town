@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgoai10qv50ej"]
+[gd_scene load_steps=6 format=3 uid="uid://cgoai10qv50ej"]
 
 [ext_resource type="Script" uid="uid://dgt1uj304akw1" path="res://scenes/npc_ghost.gd" id="1_i0xr4"]
 [ext_resource type="PackedScene" uid="uid://b6yuitgghh720" path="res://assets/lowpolyghost/lowpolyghost.glb" id="2_8vyxv"]
 [ext_resource type="Script" uid="uid://dpita37mltpo5" path="res://scripts/wander.gd" id="3_7no6m"]
+[ext_resource type="AudioStream" uid="uid://chrqir75otnmc" path="res://assets/son/ghostly-whispering.mp3" id="4_8vyxv"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lgtus"]
 height = 1.0761719
@@ -21,3 +22,9 @@ shape = SubResource("CapsuleShape3D_lgtus")
 [node name="Wander" type="Node3D" parent="."]
 script = ExtResource("3_7no6m")
 group_name = "ghost_group"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_8vyxv")
+volume_db = -15.0
+max_db = 2.0
+autoplay = true

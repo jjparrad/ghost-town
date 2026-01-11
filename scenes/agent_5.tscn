@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bk1vv4wob8uh4"]
+[gd_scene load_steps=6 format=3 uid="uid://bk1vv4wob8uh4"]
 
 [ext_resource type="Script" uid="uid://dmgggtmr27eie" path="res://scripts/agent.gd" id="1_2qt7s"]
 [ext_resource type="Script" uid="uid://cnuukx1g2tkhq" path="res://scripts/wanderNav.gd" id="2_latx3"]
 [ext_resource type="PackedScene" uid="uid://c6q2g3w8tm2y" path="res://scenes/rogue.tscn" id="3_2qt7s"]
+[ext_resource type="AudioStream" uid="uid://c36ss46bc2k80" path="res://assets/son/tosh.mp3" id="4_latx3"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b2pv0"]
 
@@ -20,3 +21,8 @@ shape = SubResource("CapsuleShape3D_b2pv0")
 script = ExtResource("2_latx3")
 
 [node name="Character" parent="." instance=ExtResource("3_2qt7s")]
+
+[node name="ScaredSound" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4347653, 0)
+stream = ExtResource("4_latx3")
+max_distance = 20.0

@@ -8,6 +8,7 @@ extends CharacterBody3D
 @export var markerGroup : String
 
 @onready var anim := $Character/AnimationPlayer
+@onready var scared_sound: AudioStreamPlayer3D = $ScaredSound
 
 var scared : bool = false #scared state (permanent)
 var is_scaring: bool = false #just for the scared animation
@@ -50,6 +51,7 @@ func scare() -> void:
 func _play_scare_animation() -> void:
 	iswaiting = true
 
+	scared_sound.play()
 	anim.play("anims/Jump_Full_Short")
 	await anim.animation_finished
 

@@ -20,9 +20,10 @@ shading_mode = 0
 albedo_color = Color(0.40919575, 0.7693748, 0.35391948, 1)
 
 [node name="Mug" instance=ExtResource("1_t22uy")]
+min_throw_speed = null
 
 [node name="CollisionShape3D" parent="." index="0"]
-transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0.067106545, 0)
+transform = Transform3D(0.7, 0, 0, 0, 0.50312924, 0, 0, 0, 0.7, 0, -0.010384291, 0)
 shape = SubResource("CapsuleShape3D_ubi45")
 
 [node name="mug_empty" parent="." index="1" instance=ExtResource("2_t22uy")]
@@ -45,3 +46,9 @@ visible = true
 [node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("4_2ywd3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.109254956, 0.033424273, -0.11982742)
 visible = true
+
+[node name="Area3D" type="Area3D" parent="." index="5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(0.9, 0, 0, 0, 0.647, 0, 0, 0, 0.9, 0, -0.010384291, 0)
+shape = SubResource("CapsuleShape3D_ubi45")

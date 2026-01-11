@@ -15,7 +15,7 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	if global_position.distance_to(current_position.position) < 2 :
+	if global_position.distance_to(current_position.position) < 2.0 :
 		_get_next_position()
 
 func _get_positions():

@@ -2,6 +2,7 @@
 class_name XRToolsPickable
 extends RigidBody3D
 
+@export var min_throw_speed: float = 2.0
 
 ## XR Tools Pickable Object
 ##
@@ -128,6 +129,24 @@ func _ready():
 		var grab_point := child as XRToolsGrabPoint
 		if grab_point:
 			_grab_points.push_back(grab_point)
+	
+	if has_node("Area3D"):
+		$Area3D.body_entered.connect(_on_body_entered)
+		$Area3D.body_exited.connect(_on_body_exited)
+	else:
+		push_error("Pickable: Area3D manquante")
+
+func _on_body_entered(body: Node) -> void:
+	if not body.is_in_group("agent_group"):
+		return
+	# Récupère la vitesse de l'objet lancé
+	var speed := linear_velocity.length()
+	if speed >= min_throw_speed:
+		if body.has_method("scare"):
+			body.scare()
+
+func _on_body_exited(body: Node) -> void:
+	pass
 
 
 # Called when the node exits the tree
