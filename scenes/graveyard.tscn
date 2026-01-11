@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://p4nt5ujaulag"]
+[gd_scene load_steps=62 format=3 uid="uid://p4nt5ujaulag"]
 
 [ext_resource type="PackedScene" uid="uid://cdxmiogatlxwk" path="res://assets/3D/Town/Graveyard/arch.tscn" id="1_7o2vs"]
 [ext_resource type="PackedScene" uid="uid://0yonhp25btgf" path="res://assets/3D/Town/Graveyard/fence_002.tscn" id="2_parnt"]
@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://c0yb0wbsn2awp" path="res://assets/3D/Town/Graveyard/tomb_001.tscn" id="12_tbfj3"]
 [ext_resource type="PackedScene" uid="uid://bal457t2fx6k0" path="res://assets/3D/kenney_graveyard-kit/Models/FBX format/bench.fbx" id="13_gyrsu"]
 [ext_resource type="PackedScene" uid="uid://8eyd5hwt07ls" path="res://assets/3D/kenney_graveyard-kit/Models/FBX format/candle-multiple.fbx" id="14_0ya5n"]
-[ext_resource type="PackedScene" uid="uid://cxpr53y4clofs" path="res://assets/3D/kenney_graveyard-kit/Models/FBX format/candle.fbx" id="15_f0agi"]
 [ext_resource type="PackedScene" uid="uid://dnlrt58a5pc8" path="res://assets/3D/kenney_graveyard-kit/Models/FBX format/coffin-old.fbx" id="16_0yfep"]
 [ext_resource type="PackedScene" uid="uid://db63ujahv1rui" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/coffin.glb" id="17_p5wnj"]
 [ext_resource type="PackedScene" uid="uid://jk0jo2kulmeu" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/cross-column.glb" id="18_0k25g"]
@@ -422,129 +421,6 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -62.533722, 4.535932, 46.4473
 [node name="candle-multiple2" parent="." instance=ExtResource("14_0ya5n")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -66.65026, 4.763473, 46.17269)
 
-[node name="candle" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.589603, 4.0028467, 74.74927)
-
-[node name="candle2" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.009461, 4.994675, 74.756096)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle3" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.00987, 4.4217277, 75.19797)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle5" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.652657, 4.0422063, 47.18793)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle19" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.298115, 4.951322, 43.014915)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle19"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle8" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -45.1739, 4.0422063, 46.16376)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle16" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.345688, 4.124057, 38.907234)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle16"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle17" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.406303, 3.998877, 32.767227)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle17"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle18" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.964409, 3.998877, 35.87497)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle18"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle14" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -43.353035, 3.929274, 72.09947)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle14"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle15" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67.65457, 4.823537, 58.471283)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle15"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle20" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -63.866, 5.1649504, 46.451904)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle20"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle21" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.3766, 4.5002866, 46.653267)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="candle21"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16421843, 0)
-light_color = Color(0.844727, 0.39356378, 0.1972161, 1)
-omni_range = 2.109
-
-[node name="candle4" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.23496, 4.4631467, 73.24499)
-
-[node name="candle6" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.797928, 5.3663955, 51.127495)
-
-[node name="candle7" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.947659, 4.7126184, 47.755894)
-
-[node name="candle9" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.276985, 3.8832316, 39.67456)
-
-[node name="candle10" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.07159, 5.736515, 50.474888)
-
-[node name="candle11" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.793404, 3.7705545, 44.030567)
-
-[node name="candle12" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.414127, 5.736515, 33.16368)
-
-[node name="candle13" parent="." instance=ExtResource("15_f0agi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.414127, 4.3648243, 33.16368)
-
 [node name="coffin-old" parent="." instance=ExtResource("16_0yfep")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.41094, 4.680942, 78.16962)
 
@@ -949,11 +825,6 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single13/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0.3244419, 0.55464697, 0.48093605)
 shape = SubResource("SphereShape3D_u8fkb")
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="lightpost-single13"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -6.702747e-08, 1.5334098)
-stream = ExtResource("45_5d3e0")
-volume_db = -1.0
 
 [node name="lightpost-single15" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(0.056126118, 0, -2.9994752, 0, 2.9999998, 0, 2.9994752, 0, 0.056126118, -51.193264, 3.8706388, 50.178802)

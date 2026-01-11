@@ -29,7 +29,6 @@ shape = SubResource("BoxShape3D_3it06")
 
 [node name="XRToolsHighlightVisible" type="Node3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07074489, 0.026590347)
-visible = false
 script = ExtResource("3_7kata")
 metadata/_custom_type_script = "uid://0b7wkxi4vymb"
 
@@ -43,7 +42,6 @@ transform = Transform3D(-0.0054803058, -7.450581e-09, -0.9999851, 0.10792834, -0
 
 [node name="GrabPointHandLeft" parent="." index="4" instance=ExtResource("5_luwxh")]
 transform = Transform3D(0.051115833, 0, 0.9986928, -0.12449502, -0.9921998, 0.0063719973, 0.9909027, -0.12465798, -0.050717123, -0.122242585, -0.04477111, -0.17200121)
-visible = true
 
 [node name="Area3D" type="Area3D" parent="." index="5"]
 visible = false

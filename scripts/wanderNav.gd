@@ -29,9 +29,6 @@ func _ready() -> void:
 	
 func _physics_process(delta: float) -> void:
 	if owner_node.scared:
-		flee_position = owner_node.flee_position
-		if agent.target_position != flee_position:
-			agent.target_position = flee_position
 		return
 
 	if agent.is_navigation_finished() and not waiting:

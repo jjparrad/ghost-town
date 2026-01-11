@@ -3,7 +3,8 @@ extends CharacterBody3D
 @export var speed: float = 2.0
 @onready var agent: NavigationAgent3D = $NavigationAgent3D
 
-@export var flee_position: Vector3 = Vector3.ZERO
+
+@export var flee_position: Marker3D
 
 @export var markerGroup : String
 
@@ -22,6 +23,8 @@ func _physics_process(delta: float) -> void:
 	if agent.is_navigation_finished():
 		velocity = Vector3.ZERO
 		update_animation()
+		if scared:
+			disappear()
 		return
 
 	var next_pos = agent.get_next_path_position()
@@ -57,6 +60,12 @@ func _play_scare_animation() -> void:
 
 	iswaiting = false
 	is_scaring = false
+	start_flee()
+
+func start_flee() -> void:
+	if flee_position == null:
+		return
+	agent.target_position = flee_position.global_position
 
 func play_idle():
 	iswaiting = true
@@ -77,3 +86,8 @@ func update_animation():
 		else:
 			if anim.current_animation != "anims/Running_A":
 				anim.play("anims/Running_A")
+				
+func disappear() -> void:
+	set_physics_process(false)
+	await get_tree().create_timer(0.3).timeout
+	queue_free()
