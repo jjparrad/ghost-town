@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://p4nt5ujaulag"]
+[gd_scene load_steps=62 format=3 uid="uid://p4nt5ujaulag"]
 
 [ext_resource type="PackedScene" uid="uid://cdxmiogatlxwk" path="res://assets/3D/Town/Graveyard/arch.tscn" id="1_7o2vs"]
 [ext_resource type="PackedScene" uid="uid://0yonhp25btgf" path="res://assets/3D/Town/Graveyard/fence_002.tscn" id="2_parnt"]
@@ -36,6 +36,7 @@
 [ext_resource type="PackedScene" uid="uid://cmry8dnaudaid" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-cross-large.glb" id="41_3os4f"]
 [ext_resource type="PackedScene" uid="uid://c7aenw15xeujv" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-cross.glb" id="42_fohqs"]
 [ext_resource type="PackedScene" uid="uid://gfeqin72k3uh" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-decorative.glb" id="43_qu8hi"]
+[ext_resource type="Script" uid="uid://doqkffs5edupm" path="res://scripts/interactable.gd" id="44_j6ct8"]
 [ext_resource type="PackedScene" uid="uid://b4lknlacafe3f" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-debris.glb" id="44_mu621"]
 [ext_resource type="PackedScene" uid="uid://d0x0u25uba6hm" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-flat-open.glb" id="45_u1dub"]
 [ext_resource type="PackedScene" uid="uid://cofb2widbc8as" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/gravestone-flat.glb" id="46_14ray"]
@@ -50,6 +51,167 @@
 [ext_resource type="PackedScene" uid="uid://b7qdvlqbi8hie" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/shovel.glb" id="60_oxp7k"]
 [ext_resource type="PackedScene" uid="uid://dtxd32lmxj8v7" path="res://assets/3D/kenney_graveyard-kit/Models/GLB format/trunk.glb" id="61_whokp"]
 [ext_resource type="PackedScene" uid="uid://cy15yt572as4o" path="res://assets/3D/Town/Nature/tree_pine.tscn" id="64_pq3hk"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u8fkb"]
+radius = 1.4256299
+
+[sub_resource type="Animation" id="Animation_r435k"]
+resource_name = "interact"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(1.5707964, 0, 0), Vector3(1.5707964, 0, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.5, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-37.384384, 3.7341762, 59.5592), Vector3(-37.384, 5.3, 59.559), Vector3(-37.384, 5.3, 59.559), Vector3(-37.384384, 3.7341762, 59.5592)]
+}
+
+[sub_resource type="Animation" id="Animation_jal2e"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-37.384384, 3.7341762, 59.5592)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mwp4q"]
+_data = {
+&"RESET": SubResource("Animation_jal2e"),
+&"interact": SubResource("Animation_r435k")
+}
+
+[sub_resource type="Animation" id="Animation_5d3e0"]
+resource_name = "interact"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -0.90448207, 0), Vector3(0, -0.90408057, -0.17453292), Vector3(0, -0.90408057, 0.17453292), Vector3(0, -0.90408057, -0.17453292), Vector3(0, -0.90448207, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_mchq1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -0.90448207, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r435k"]
+_data = {
+&"RESET": SubResource("Animation_mchq1"),
+&"interact": SubResource("Animation_5d3e0")
+}
+
+[sub_resource type="Animation" id="Animation_u8fkb"]
+resource_name = "interact"
+length = 3.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 0
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.126, 0.3, 0.4, 0.6333333, 0.8, 1, 2.8666666, 3.0333333, 3.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [2.0, 2.0, 0.0, 2.0, 2.0, 0.0, 0.0, 2.0, 0.0, 0.0, 2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.9666667, 3.3333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.827451, 0.4392157, 0.039215688, 1), Color(0, 0.5617217, 0.9915263, 1), Color(0, 0.5617217, 0.9915263, 1), Color(0.827451, 0.4392157, 0.039215688, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_j6ct8"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("OmniLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("OmniLight3D:light_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.827451, 0.4392157, 0.039215688, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5d3e0"]
+_data = {
+&"RESET": SubResource("Animation_j6ct8"),
+&"interact": SubResource("Animation_u8fkb")
+}
 
 [node name="Graveyard" type="Node"]
 
@@ -610,6 +772,17 @@ transform = Transform3D(2.9768987, 7.685153e-09, 0.37158382, -0.01468555, 2.9976
 [node name="gravestone-flat6" parent="." instance=ExtResource("46_14ray")]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -37.384384, 3.7341762, 59.5592)
 
+[node name="Area3D" type="Area3D" parent="gravestone-flat6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gravestone-flat6/Area3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0.012649536, 0.55464697, 0.8710842)
+shape = SubResource("SphereShape3D_u8fkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="gravestone-flat6"]
+libraries = {
+&"": SubResource("AnimationLibrary_mwp4q")
+}
+
 [node name="gravestone-roof2" parent="." instance=ExtResource("47_f3e58")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.563242, 4.3338976, 76.00302)
 
@@ -626,7 +799,19 @@ transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -11.180918, 5.19511, 62.76738
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, -23.390112, 4.246043, 72.39733)
 
 [node name="gravestone-wide5" parent="." instance=ExtResource("49_s5alu")]
-transform = Transform3D(1.8542786, 0, -2.3583152, 0, 3, 0, 2.3583152, 0, 1.8542786, -29.427008, 3.9559484, 58.066437)
+transform = Transform3D(1.8542786, 0, -2.3583155, 0, 3, 0, 2.3583155, 0, 1.8542786, -29.427008, 3.9559484, 58.066437)
+script = ExtResource("44_j6ct8")
+
+[node name="Area3D" type="Area3D" parent="gravestone-wide5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="gravestone-wide5/Area3D"]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0.63775444, 0.55464697, 0.7272854)
+shape = SubResource("SphereShape3D_u8fkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="gravestone-wide5"]
+libraries = {
+&"": SubResource("AnimationLibrary_r435k")
+}
 
 [node name="gravestone-wide6" parent="." instance=ExtResource("49_s5alu")]
 transform = Transform3D(1.8875949, 0, -2.3317344, 0, 3, 0, 2.3317344, 0, 1.8875949, -19.757843, 4.2460437, 66.73848)
@@ -643,6 +828,7 @@ omni_attenuation = 1.2
 
 [node name="lightpost-single4" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(2.6906183, 0, 1.3268661, 0, 3, 0, -1.3268661, 0, 2.6906183, 1.2318931, 4.8941636, 51.482246)
+script = ExtResource("44_j6ct8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lightpost-single4"]
 transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.016654015, 0.9148879, 0.26209068)
@@ -650,6 +836,17 @@ light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
 omni_attenuation = 1.2
+
+[node name="Area3D" type="Area3D" parent="lightpost-single4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single4/Area3D"]
+transform = Transform3D(1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0, 1.0000001, -0.4820423, 0.55464697, 0.083221436)
+shape = SubResource("SphereShape3D_u8fkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lightpost-single4"]
+libraries = {
+&"": SubResource("AnimationLibrary_5d3e0")
+}
 
 [node name="lightpost-single9" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(-2.9258423, 0, -0.66290927, 0, 3, 0, 0.66290927, 0, -2.9258423, -13.324271, 5.2871323, 60.846657)
@@ -663,6 +860,7 @@ omni_attenuation = 1.2
 
 [node name="lightpost-single10" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(2.277678, 0, 1.9524817, 0, 3, 0, -1.9524817, 0, 2.277678, -22.211334, 4.5489697, 59.933384)
+script = ExtResource("44_j6ct8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lightpost-single10"]
 transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.016654015, 0.9148879, 0.26209068)
@@ -670,6 +868,17 @@ light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
 omni_attenuation = 1.2
+
+[node name="Area3D" type="Area3D" parent="lightpost-single10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single10/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0.3244419, 0.55464697, 0.48093605)
+shape = SubResource("SphereShape3D_u8fkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lightpost-single10"]
+libraries = {
+&"": SubResource("AnimationLibrary_5d3e0")
+}
 
 [node name="lightpost-single11" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(-2.9864287, 0, -0.28503525, 0, 2.9999998, 0, 0.28503525, 0, -2.9864287, -34.085026, 3.8010368, 66.692566)
@@ -683,6 +892,7 @@ omni_attenuation = 1.2
 
 [node name="lightpost-single12" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(2.810585, 0, 1.0491015, 0, 2.9999998, 0, -1.0491015, 0, 2.810585, -42.009335, 3.8010368, 63.35504)
+script = ExtResource("44_j6ct8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lightpost-single12"]
 transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.016654015, 0.9148879, 0.26209068)
@@ -691,8 +901,20 @@ light_energy = 2.0
 omni_range = 14.999
 omni_attenuation = 1.2
 
+[node name="Area3D" type="Area3D" parent="lightpost-single12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single12/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0.3244419, 0.55464697, 0.48093605)
+shape = SubResource("SphereShape3D_u8fkb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lightpost-single12"]
+libraries = {
+&"": SubResource("AnimationLibrary_5d3e0")
+}
+
 [node name="lightpost-single13" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(0.056126118, 0, -2.9994752, 0, 2.9999998, 0, 2.9994752, 0, 0.056126118, -49.881485, 3.750382, 59.020664)
+script = ExtResource("44_j6ct8")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="lightpost-single13"]
 transform = Transform3D(0.33333334, 0, 0, 0, 0.33333334, 0, 0, 0, 0.33333334, 0.016654015, 0.9148879, 0.26209068)
@@ -700,6 +922,17 @@ light_color = Color(0.827451, 0.4392157, 0.039215688, 1)
 light_energy = 2.0
 omni_range = 14.999
 omni_attenuation = 1.2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="lightpost-single13"]
+libraries = {
+&"": SubResource("AnimationLibrary_5d3e0")
+}
+
+[node name="Area3D" type="Area3D" parent="lightpost-single13"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="lightpost-single13/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0.3244419, 0.55464697, 0.48093605)
+shape = SubResource("SphereShape3D_u8fkb")
 
 [node name="lightpost-single15" parent="." instance=ExtResource("53_3mc26")]
 transform = Transform3D(0.056126118, 0, -2.9994752, 0, 2.9999998, 0, 2.9994752, 0, 0.056126118, -51.193264, 3.8706388, 50.178802)
